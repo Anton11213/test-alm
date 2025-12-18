@@ -3,37 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex, nofollow">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEST - L Almquist Fastighetsförvaltning</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>L Almquist Fastighetsförvaltning - Hässleholm & Tyringe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Samma stil som tidigare... */
-        :root { --primary: #1a2a3a; --accent: #c5a059; --light: #f8f9fa; --text: #333; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); background: var(--light); }
-        h1, h2 { font-family: 'Playfair Display', serif; }
-        nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .logo { font-size: 1.2rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
-        .nav-links a { text-decoration: none; color: var(--text); margin-left: 20px; font-weight: 600; font-size: 0.9rem; }
-        header { height: 70vh; background: linear-gradient(rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.8)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 20px; }
-        header h1 { font-size: 3rem; margin-bottom: 10px; }
-        section { padding: 80px 10%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--accent); }
-        .btn { display: inline-block; padding: 12px 30px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: 600; margin-top: 20px; }
-        footer { background: #eee; text-align: center; padding: 20px; font-size: 0.8rem; }
+        :root {
+            --dark: #121a23;
+            --gold: #b5935a;
+            --offwhite: #fdfdfd;
+            --grey: #f4f4f4;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin:0; color: #333; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--dark); }
+
+        /* Header & Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: white; position: sticky; top:0; z-index:100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { border: 2px solid var(--dark); padding: 5px 15px; font-weight: bold; letter-spacing: 2px; }
+        
+        /* Hero Section */
+        .hero { 
+            height: 80vh; 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1600&q=80'); 
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px;
+        }
+        .hero h1 { color: white; font-size: 3.5rem; margin-bottom: 10px; }
+
+        /* Information */
+        .section { padding: 80px 10%; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .card { background: var(--grey); padding: 40px; border-radius: 4px; border-bottom: 3px solid var(--gold); }
+
+        /* Contact Section */
+        .contact-strip { background: var(--dark); color: white; padding: 60px 10%; text-align: center; }
+        .contact-strip h2 { color: white; }
+        .btn { display: inline-block; background: var(--gold); color: white; padding: 15px 40px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; }
+        .btn:hover { background: #967a4a; }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
-    <nav><div class="logo">L Almquist (TESTSIDA)</div></nav>
-    <header>
-        <h1>L Almquist Fastighetsförvaltning</h1>
-        <p>Detta är en testsida som inte är sökbar på Google.</p>
-    </header>
-    <section>
-        <h2>Här kan du testa designen i lugn och ro.</h2>
-        <p>Ingen kommer hitta hit om du inte ger dem länken direkt.</p>
-    </section>
+
+<nav>
+    <div class="logo">L ALMQUIST</div>
+    <div style="font-size: 0.8rem; letter-spacing: 1px;">FASTIGHETSFÖRVALTNING</div>
+</nav>
+
+<header class="hero">
+    <h1>Klassiska hem & lokaler</h1>
+    <p>Vi äger och förvaltar 340 lägenheter i Hässleholm och Tyringe.</p>
+</header>
+
+<section class="section">
+    <div style="max-width: 800px; margin: 0 auto 60px auto; text-align: center;">
+        <h2>Ett familjeföretag med personlig service</h2>
+        <p>Almquist Fastighetsförvaltning erbjuder allt från bekväma övernattningslägenheter till representativa sekelskiftesvåningar med högt i tak och kakelugn.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Bostäder</h3>
+            <p>Söker du hem i Hässleholm eller Tyringe? Vi har lägenheter i alla storlekar med konkurrenskraftiga hyror.</p>
+            <a href="mailto:info@almquistfastigheter.se?subject=Intresseanmälan Bostad" class="btn">Intresseanmälan</a>
+        </div>
+        <div class="card">
+            <h3>Lokaler</h3>
+            <p>Vi erbjuder affärslokaler och kontor på centrala lägen för din verksamhet att växa i.</p>
+            <a href="mailto:info@almquistfastigheter.se?subject=Intresseanmälan Lokal" class="btn">Sök lokal</a>
+        </div>
+    </div>
+</section>
+
+<section class="contact-strip">
+    <h2>Felanmälan & Jour</h2>
+    <p>Vardagar 09:00 - 12:00: <strong>0451-145 58</strong></p>
+    <p>E-post: info@almquistfastigheter.se</p>
+    <p style="font-size: 0.9rem; margin-top: 20px; opacity: 0.7;">Vid akuta fel utanför kontorstid, se anslag i din trappuppgång.</p>
+</section>
+
+<footer style="padding: 40px; text-align: center; font-size: 0.8rem; color: #999;">
+    <p>Besöksadress: Gjutaregatan 8, 281 51 Hässleholm | Postadress: Box 44, 281 21 Hässleholm</p>
+    <p>© 2024 L Almquist Fastighetsförvaltning</p>
+</footer>
+
 </body>
 </html>
