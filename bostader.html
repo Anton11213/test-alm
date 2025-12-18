@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bostäder & Lokaler - L Almquist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0f172a; --secondary: #334155; --bg-light: #f8fafc; --white: #ffffff; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--secondary); line-height: 1.6; margin: 0; }
+        h1, h2 { font-family: 'Playfair Display', serif; color: var(--primary); }
+        
+        nav { background: var(--white); padding: 20px 5%; border-bottom: 1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; }
+        .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; text-decoration: none; }
+        .back-link { text-decoration: none; color: var(--secondary); font-size: 0.9rem; }
+
+        .header-section { background: var(--primary); color: white; padding: 60px 20px; text-align: center; }
+        .header-section h1 { color: white; margin-bottom: 10px; }
+
+        .content { max-width: 900px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .item { background: white; padding: 30px; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        
+        @media (max-width: 768px) { .content { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">L Almquist</a>
+    <a href="index.html" class="back-link">← Tillbaka till startsidan</a>
+</nav>
+
+<div class="header-section">
+    <h1>Bostäder & Lokaler</h1>
+    <p>Vi förvaltar fastigheter i centrala Hässleholm och Tyringe.</p>
+</div>
+
+<div class="content">
+    <div class="item">
+        <h2>Bostäder</h2>
+        <p>Vårt bestånd består av 340 lägenheter i varierande storlekar. Från praktiska 1:or till rymliga familjebostäder.</p>
+        <p>Just nu har vi tyvärr inget ledigt som publiceras här, men du är välkommen att skicka in en intresseanmälan.</p>
+        <a href="mailto:info@almquistfastigheter.se?subject=Intresseanmälan Lägenhet" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary);">Skicka intresseanmälan →</a>
+    </div>
+    <div class="item">
+        <h2>Kommersiella Lokaler</h2>
+        <p>Vi erbjuder kontors- och butikslokaler i strategiska lägen. Kontakta oss för att se vad som är ledigt just nu eller för att diskutera era behov.</p>
+        <a href="mailto:info@almquistfastigheter.se?subject=Förfrågan Lokal" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary);">Kontakta oss om lokaler →</a>
+    </div>
+</div>
+
+</body>
+</html>
