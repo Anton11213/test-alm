@@ -12,38 +12,48 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--secondary); line-height: 1.6; margin: 0; }
         h1, h2 { font-family: 'Playfair Display', serif; color: var(--primary); }
         
-        /* Navigation (Samma som index) */
         nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; }
-        .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; text-decoration: none; font-size: 1.1rem; }
+        .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; text-decoration: none; font-size: 1.1rem; display:flex; gap:10px; align-items:center; }
         .back-link { text-decoration: none; color: var(--secondary); font-size: 0.9rem; font-weight: 500; }
         .back-link:hover { color: var(--primary); }
 
-        .header-section { background: var(--primary); color: white; padding: 60px 20px; text-align: center; }
-        .header-section h1 { color: white; margin-bottom: 10px; }
+        .header-section { background: var(--primary); color: white; padding: 80px 20px; text-align: center; }
+        .header-section h1 { color: white; margin-bottom: 15px; font-size: 2.5rem; }
+        .header-section p { max-width: 600px; margin: 0 auto; font-size: 1.1rem; opacity: 0.9; }
 
-        .content-container { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+        .content-container { max-width: 1000px; margin: -40px auto 60px auto; padding: 0 20px; position: relative; z-index: 10; }
         
-        /* Karta-sektion */
-        .map-section { margin-bottom: 60px; }
+        /* Karta-sektion med "Maskering" */
+        .map-section { margin-bottom: 60px; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        
         .map-frame { 
             width: 100%; 
-            height: 450px; 
-            border: 1px solid #cbd5e1; 
-            border-radius: 8px; 
-            overflow: hidden; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            height: 500px; 
+            overflow: hidden; /* Klipper bort kanter */
+            border-radius: 4px; 
+            position: relative;
+        }
+        
+        .map-frame iframe {
+            width: 100%;
+            height: 115%; /* Gör kartan lite högre än rutan... */
+            margin-top: -55px; /* ...och drar upp den för att dölja den grå listen! */
+            border: 0;
         }
 
-        /* Text info */
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .info-card { background: white; padding: 40px; border-radius: 6px; box-shadow: 0 2px 15px rgba(0,0,0,0.03); border-top: 4px solid var(--primary); }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .info-card { background: white; padding: 40px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-top: 4px solid var(--primary); }
         
-        .btn-action { display: inline-block; margin-top: 20px; font-weight: 600; color: var(--primary); text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
-        .btn-action:hover { color: var(--gold); }
+        .btn-action { display: inline-block; margin-top: 20px; font-weight: 600; color: var(--primary); text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 2px; transition: 0.3s; }
+        .btn-action:hover { color: var(--gold); border-color: transparent; }
 
         footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #999; margin-top: 40px; border-top: 1px solid #eee; }
 
-        @media (max-width: 768px) { .info-grid { grid-template-columns: 1fr; } .map-frame { height: 300px; } }
+        @media (max-width: 768px) { 
+            .info-grid { grid-template-columns: 1fr; } 
+            .map-frame { height: 350px; }
+            .header-section { padding: 60px 20px 80px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -54,19 +64,19 @@
 </nav>
 
 <div class="header-section">
-    <h1>Bostäder & Lokaler</h1>
-    <p>Här finns vi. Utforska våra områden i Hässleholm och Tyringe.</p>
+    <h1>Hitta hem hos L Almquist</h1>
+    <p>Vi förvaltar fastigheter i noggrant utvalda lägen. Oavsett om du söker pulsen i centrum eller lugnet i ett lummigt bostadsområde, har vi ett hem för dig.</p>
 </div>
 
 <div class="content-container">
     
     <div class="map-section">
-        <h2 style="text-align: center; margin-bottom: 20px;">Våra Fastigheter</h2>
-        <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto;">
-            På kartan nedan kan du se var våra fastigheter är belägna. Vi har objekt nära stationen, i centrum och i lugnare områden.
-        </p>
-        <div class="map-frame"><iframe src="https://www.google.com/maps/d/u/2/embed?mid=1XjMECHs6G5xvyoWzMN_jJKygHg75GdM&ehbc=2E312F" width="640" height="480"></iframe>
+        <div class="map-frame">
+            <iframe src="https://www.google.com/maps/d/u/2/embed?mid=1XjMECHs6G5xvyoWzMN_jJKygHg75GdM&ehbc=2E312F" width="100%"></iframe>
         </div>
+        <p style="text-align: center; font-size: 0.85rem; color: #888; margin-top: 10px;">
+            <i class="fa-solid fa-info-circle"></i> Använd kartan för att se våra fastigheter i Hässleholm och Tyringe.
+        </p>
     </div>
 
     <div class="info-grid">
@@ -87,7 +97,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2025 L Almquist Fastighetsförvaltning</p>
+    <p>© 2025 L Almquist Fastighetsförvaltning</p>
 </footer>
 
 </body>
