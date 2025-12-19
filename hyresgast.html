@@ -3,133 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>För Hyresgäster - L Almquist</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>För Hyresgäster - L Almquist Fastighetsförvaltning</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        :root { --primary: #0f172a; --secondary: #334155; --bg-light: #f8fafc; --white: #ffffff; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--secondary); margin: 0; }
-        h1, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); }
-        nav { background: var(--white); padding: 15px 5%; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        .info-block { background: var(--white); padding: 30px; margin-bottom: 25px; border-radius: 6px; border-left: 4px solid var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        :root { --primary: #0f172a; --secondary: #334155; --bg-light: #f8fafc; --white: #ffffff; --gold: #c5a059; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--secondary); line-height: 1.6; margin: 0; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
         
-        /* Accordion Styling */
-        .accordion-item { border-bottom: 1px solid #edf2f7; }
-        .accordion-header { 
-            width: 100%; padding: 15px 0; background: none; border: none; text-align: left; 
-            font-weight: 600; color: var(--primary); cursor: pointer; display: flex; justify-content: space-between;
-        }
-        .accordion-header:after { content: '+'; font-size: 1.2rem; }
-        .accordion-item.active .accordion-header:after { content: '−'; }
-        .accordion-content { display: none; padding-bottom: 20px; color: #4a5568; font-size: 0.95rem; line-height: 1.6; }
-        .accordion-item.active .accordion-content { display: block; }
+        /* Navigation */
+        nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; font-size: 1.1rem; display:flex; gap:10px; align-items:center; }
+        .back-link { color: var(--secondary); font-size: 0.9rem; font-weight: 500; }
+        .back-link:hover { color: var(--primary); }
 
-        .btn-action { padding: 10px 20px; background: var(--secondary); color: white; border: none; border-radius: 4px; cursor: pointer; }
+        /* Innehåll */
+        .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        .page-title { text-align: center; margin-bottom: 50px; }
+
+        .info-block { background: var(--white); padding: 40px; margin-bottom: 30px; border-radius: 6px; border-left: 4px solid var(--primary); box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+        .info-block h3 { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        
         .alert-box { background: #fff5f5; border: 1px solid #feb2b2; padding: 15px; border-radius: 4px; margin-bottom: 20px; font-size: 0.9rem; color: #c53030; }
-        .jour-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
-        .jour-box { background: #f7fafc; padding: 15px; border-radius: 4px; border: 1px solid #e2e8f0; }
+
+        /* Accordion / Skötselråd */
+        .accordion { margin-top: 20px; }
+        .accordion-item { border-bottom: 1px solid #e2e8f0; }
+        .accordion-header { 
+            width: 100%; padding: 18px 0; background: none; border: none; 
+            text-align: left; font-size: 1.05rem; font-weight: 600; color: var(--primary); 
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+            font-family: 'Inter', sans-serif;
+        }
+        .accordion-content { display: none; padding-bottom: 20px; font-size: 0.95rem; color: #475569; }
+        .accordion-header:after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 0.8rem; transition: 0.3s; }
+        .accordion-item.active .accordion-content { display: block; }
+        .accordion-item.active .accordion-header:after { transform: rotate(180deg); }
+
+        /* Jour-rutor */
+        .jour-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .jour-box { background: #f1f5f9; padding: 25px; border-radius: 4px; border: 1px solid #e2e8f0; }
+        .phone-number { font-size: 1.3rem; font-weight: 700; color: var(--primary); display: block; margin-top: 15px; }
+
+        /* Formulär */
+        .btn-action { display: inline-block; margin-top: 15px; padding: 12px 25px; background-color: var(--secondary); color: white; border-radius: 4px; font-weight: 600; cursor: pointer; border: none; }
+        .btn-action:hover { background-color: var(--primary); }
+        .expandable-form { display: none; margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+        /* Footer */
+        footer { background: var(--primary); color: #94a3b8; padding: 60px 5%; margin-top: 80px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { color: white; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .footer-map-container { width: 100%; height: 250px; border-radius: 4px; overflow: hidden; border: 1px solid #334155; }
+        .footer-map-container iframe { width: 100%; height: 100%; border: 0; }
+
+        @media (max-width: 768px) { .jour-grid, .footer-content { grid-template-columns: 1fr; } .page-title h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
 
 <nav>
-    <span style="font-weight:700;">L ALMQUIST</span>
-    <a href="index.html">← Tillbaka</a>
+    <a href="index.html" class="logo"><i class="fa-solid fa-building"></i> L Almquist</a>
+    <a href="index.html" class="back-link">← Tillbaka till startsidan</a>
 </nav>
 
 <div class="container">
-    <h1>Information för Hyresgäster</h1>
+    <div class="page-title">
+        <h1>Information för Hyresgäster</h1>
+        <p>Här hittar du allt som rör din hyresrätt och din vardag hos oss.</p>
+    </div>
 
-    <div class="info-block">
+    <div class="info-block" id="felanmalan">
         <h3><i class="fa-solid fa-screwdriver-wrench"></i> Felanmälan</h3>
         <div class="alert-box">
-            <strong>Observera:</strong> Fel rörande tjänster med egna avtal (t.ex. bredband, TV-paket eller hushållsel) anmäls direkt till din tjänsteleverantör, inte till fastighetsägaren.
+            <i class="fa-solid fa-circle-info"></i> <strong>Observera:</strong> Fel rörande tjänster med egna avtal (t.ex. bredband, TV-paket eller hushållsel) anmäls direkt till din respektive tjänsteleverantör.
         </div>
-        <p>Använd formuläret nedan för fel i lägenheten eller gemensamma utrymmen.</p>
-        <button class="btn-action" onclick="toggleF()">Gör felanmälan</button>
+        <p>Vid fel i lägenheten eller fastigheten gör du enklast en felanmälan via formuläret nedan. Vi åtgärdar felen så snart vi kan under ordinarie arbetstid.</p>
         
-        <div id="fForm" style="display:none; margin-top:20px; border-top:1px solid #eee; padding-top:20px;">
-            <p style="font-size:0.8rem; color:#666;">Genom att skicka felanmälan samtycker du till att vi behandlar dina uppgifter enligt GDPR.</p>
-            <button class="btn-action">Skicka (via e-post)</button>
+        <button class="btn-action" onclick="toggleForm('faultForm')">Öppna felanmälan</button>
+
+        <div id="faultForm" class="expandable-form">
+            <div class="form-group">
+                <label>Namn:*</label>
+                <input type="text" id="f_name" class="form-control" placeholder="Förnamn Efternamn">
+            </div>
+            <div class="form-group">
+                <label>Adress & Lägenhetsnr:*</label>
+                <input type="text" id="f_address" class="form-control" placeholder="Gatuadress och lgh-nummer">
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="form-group"><label>Telefon:*</label><input type="tel" id="f_phone" class="form-control"></div>
+                <div class="form-group"><label>E-post:*</label><input type="email" id="f_email" class="form-control"></div>
+            </div>
+            <div class="form-group">
+                <label>Får vi använda huvudnyckel?*</label>
+                <select id="f_key" class="form-control">
+                    <option value="">-- Välj ett alternativ --</option>
+                    <option value="JA">Ja, ni får gå in med huvudnyckel</option>
+                    <option value="NEJ">No, kontakta mig för tidbokning</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Beskrivning av felet:*</label>
+                <textarea id="f_desc" class="form-control" style="height:120px;" placeholder="Beskriv felet noggrant..."></textarea>
+            </div>
+            <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">Genom att skicka felanmälan samtycker du till vår behandling av personuppgifter enligt GDPR.</p>
+            <button class="btn-action" onclick="sendFaultReport()">Skicka felanmälan</button>
         </div>
     </div>
 
-    <div class="info-block">
+    <div class="info-block" id="jour">
         <h3><i class="fa-solid fa-phone-volume"></i> Jour (Kvällar & Helger)</h3>
-        <p>Endast för akuta ärenden som inte kan vänta till nästa vardag.</p>
+        <p>Jouren används vid <strong>akuta</strong> ärenden utanför kontorstid som kräver omedelbar åtgärd.</p>
         <div class="jour-grid">
             <div class="jour-box">
-                <h4>Fastighetsjour</h4>
-                <p>Akuta fel som vattenläcka eller strömlöshet.</p>
-                <strong>0708-800457</strong>
+                <h4>Akut Fastighetsjour</h4>
+                <p style="font-size:0.9rem;">För fel som innebär risk för skada på person eller byggnad, t.ex. kraftig vattenläcka eller totalt strömavbrott.</p>
+                <span class="phone-number">0708-800457</span>
             </div>
             <div class="jour-box">
                 <h4>Störningsjour</h4>
-                <p>Allvarliga störningar inom fastigheten.</p>
-                <strong>0708-800457</strong>
+                <p style="font-size:0.9rem;">Vid allvarliga och pågående störningar i fastigheten som inte kan lösas genom dialog med grannen.</p>
+                <span class="phone-number">0708-800457</span>
             </div>
         </div>
     </div>
 
-    <div class="info-block">
+    <div class="info-block" id="skotsel">
         <h3><i class="fa-solid fa-hand-sparkles"></i> Sköt om ditt boende</h3>
+        <p>Klicka på rubrikerna nedan för praktiska tips om hur du tar hand om din lägenhet.</p>
+        
         <div class="accordion">
             <div class="accordion-item">
                 <button class="accordion-header">Rensa avlopp och brunnar</button>
                 <div class="accordion-content">
-                    Du ansvarar för att hålla rent i vasken och golvbrunnen i badrummet. Plocka regelbundet bort hår och tvålrester för att undvika stopp. Använd aldrig kemiska propplösare då dessa kan skada rören.
+                    Du ansvarar för att hålla rent i vasken och golvbrunnen i badrummet. Plocka regelbundet bort hår och tvålrester för att undvika stopp. Använd aldrig kemiska propplösare då dessa kan skada rören permanent.
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-header">Bra luft och ventilation</button>
                 <div class="accordion-content">
-                    För att få bra cirkulation bör ventilerna i lägenheten hållas öppna och rena. Rengör filtret i köksfläkten regelbundet i varmt vatten och diskmedel för att undvika brandrisk och matos.
-                </div>
-            </div>
-            <div class="accordion-item">
-                <button class="accordion-header">Brandvarnare</button>
-                <div class="accordion-content">
-                    Brandvarnare finns i din lägenhet för din säkerhet. Du ansvarar själv för att testa den en gång i månaden (tryck på knappen) och byta batteri när den piper.
+                    Håll ventiler öppna och rena för bra luftcirkulation. Rengör filtret i köksfläkten regelbundet med varmt vatten och diskmedel för att minska brandrisk och matos.
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-header">Fixa och måla om</button>
                 <div class="accordion-content">
-                    Du får måla och tapetsera om själv, men det måste göras fackmannamässigt. Tänk på att välja ljusa och neutrala färger. Om arbetet är dåligt utfört eller färgvalet är extremt kan du bli ersättningsskyldig vid avflyttning.
+                    Du får måla och tapetsera om själv, men arbetet måste vara fackmannamässigt utfört. Tänk på att välja neutrala färger. Du bör alltid <a href="kontakt.html" style="text-decoration:underline; font-weight:600;">kontakta oss</a> för ett godkännande innan du påbörjar några arbeten.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">Brandvarnare</button>
+                <div class="accordion-content">
+                    Fastighetsägaren tillhandahåller brandvarnare, men du ansvarar för att testa den månadsvis och byta batteri när det behövs. En fungerande brandvarnare räddar liv.
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-header">Sopsortering</button>
                 <div class="accordion-content">
-                    Sortera ditt avfall enligt anvisningarna i miljöhusen. Grovsopor, elektronik och miljöfarligt avfall lämnas på kommunens återvinningscentraler, inte i fastighetens sopkärl.
+                    Sortera ditt avfall noggrant enligt anvisningar i miljöhusen. Grovsopor och farligt avfall ska lämnas på kommunens återvinningscentraler.
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="info-block">
+    <div class="info-block" id="ordningsregler">
         <h3><i class="fa-solid fa-list-check"></i> Ordningsregler</h3>
         <ul>
-            <li>Det ska vara lugnt i huset mellan kl. <strong>23.00 och 07.00</strong>.</li>
+            <li>Det ska vara lugnt i fastigheten mellan kl. <strong>23.00 och 07.00</strong>.</li>
             <li>Rökning är förbjuden i alla gemensamma utrymmen samt direkt utanför entréer.</li>
-            <li><strong>Grillning på balkongen är inte tillåtet</strong> (gäller även elgrill p.g.a. oset).</li>
-            <li>Håll trapphuset fritt från cyklar och dörrmattor för allas säkerhet vid brand.</li>
+            <li><strong>Grillning på balkongen är inte tillåtet</strong> (gäller även elgrill).</li>
+            <li>Trapphuset ska hållas fritt från dörrmattor, barnvagnar och cyklar p.g.a. brandskydd.</li>
         </ul>
+    </div>
+
+    <div class="info-block" id="uppsagning">
+        <h3><i class="fa-solid fa-file-signature"></i> Uppsägning</h3>
+        <p>Uppsägning av hyresavtal ska ske skriftligen. Uppsägningstiden är normalt tre (3) kalendermånader.</p>
+        <a href="kontakt.html" class="btn-action">Kontakta oss för blankett</a>
     </div>
 </div>
 
+<footer id="kontakt">
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>L Almquist Fastighetsförvaltning</h4>
+            <p><i class="fa-solid fa-map-pin"></i> Tingshusgatan 8, 281 30 Hässleholm</p>
+            <p><i class="fa-solid fa-phone"></i> 0451-145 58</p>
+            <p><i class="fa-solid fa-at"></i> info@almquistfastigheter.se</p>
+        </div>
+        <div class="footer-col">
+            <div class="footer-map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2232.894383186178!2d13.763435877292212!3d56.15891336113175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653f56e9c937169%3A0xc3f60893019808a3!2sTingshusgatan%208%2C%20281%2030%20H%C3%A4ssleholm!5e0!3m2!1ssv!2sse!4v1700000000000!5m2!1ssv!2sse" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center; border-top:1px solid #334155; padding-top:20px; font-size:0.8rem;">
+        <p>© 2025 L Almquist Fastighetsförvaltning</p>
+    </div>
+</footer>
+
 <script>
+    // Accordion
     document.querySelectorAll('.accordion-header').forEach(button => {
         button.addEventListener('click', () => {
             const item = button.parentElement;
             item.classList.toggle('active');
         });
     });
-    function toggleF() { 
-        var x = document.getElementById("fForm");
-        x.style.display = (x.style.display === "none") ? "block" : "none";
+
+    function toggleForm(id) {
+        var f = document.getElementById(id);
+        f.style.display = (f.style.display === "block") ? "none" : "block";
+    }
+
+    function sendFaultReport() {
+        var name = document.getElementById("f_name").value;
+        var addr = document.getElementById("f_address").value;
+        var key = document.getElementById("f_key").value;
+        var desc = document.getElementById("f_desc").value;
+        var phone = document.getElementById("f_phone").value;
+        
+        if(!name || !addr || !key || !desc) { alert("Vänligen fyll i alla obligatoriska fält."); return; }
+        
+        var body = `NAMN: ${name}\nADRESS: ${addr}\nTELEFON: ${phone}\n\nHUVUDNYCKEL: ${key}\n\nBESKRIVNING:\n${desc}`;
+        window.location.href = `mailto:info@almquistfastigheter.se?subject=Felanmälan - ${addr}&body=${encodeURIComponent(body)}`;
     }
 </script>
+
 </body>
 </html>
