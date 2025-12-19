@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Om oss - L Almquist Fastighetsförvaltning</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #475569;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Page Content */
+        .container {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .container h1 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .container p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            padding: 60px 5%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 250px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 40px auto;
+            }
+
+            .container h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo"><i class="fa-solid fa-building"></i> L Almquist</a>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+        <div class="nav-links" id="navLinks">
+            <a href="bostader.html">Bostäder & Lokaler</a>
+            <a href="hyresgast.html">För Hyresgäster</a>
+            <a href="om-oss.html" style="font-weight:bold; color:var(--primary);">Om oss</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>En väletablerad aktör med hemkänsla</h1>
+        <p>Almquist Fastighetsförvaltning är ett familjeföretag med lång erfarenhet av att äga och förvalta fastigheter
+            i Hässleholm. Vår filosofi bygger på långsiktighet och en vilja att skapa trivsamma miljöer där våra
+            hyresgäster vill stanna kvar.</p>
+        <p>Vi erbjuder ett brett utbud av bostäder och lokaler för olika behov. I vårt bestånd finner du allt från
+            yteffektiva övernattningslägenheter till representativa sekelskiftesvåningar med generös takhöjd,
+            stuckaturer och tidstypisk karaktär.</p>
+        <p>Genom vårt personliga engagemang och lokala närvaro vill vi göra det enkelt för dig att trivas – oavsett om
+            du söker ett nytt hem eller rätt förutsättningar för ditt företag.</p>
+    </div>
+
+    <footer id="kontakt">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>L Almquist Fastighetsförvaltning</h4>
+                <p><i class="fa-solid fa-map-pin"></i> Tingshusgatan 8, 281 30 Hässleholm</p>
+                <p><i class="fa-solid fa-phone"></i> <strong>0451-145 58</strong></p>
+                <p><i class="fa-solid fa-at"></i> info@almquistfastigheter.se</p>
+            </div>
+            <div class="footer-col">
+                <h4>Hitta hit (Kontor)</h4>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2238.643336780761!2d13.7635299!3d56.1594911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653f607a972173f%3A0x6a15e3c75a40871!2sTingshusgatan%208%2C%20281%2031%20H%C3%A4ssleholm!5e0!3m2!1ssv!2sse!4v1709214000000!5m2!1ssv!2sse"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center; border-top:1px solid #334155; padding-top:20px; font-size:0.8rem;">
+            <p>© 2025 L Almquist Fastighetsförvaltning</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
+            menu.classList.toggle("active");
+        }
+    </script>
+
+</body>
+
+</html>
