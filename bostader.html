@@ -10,11 +10,12 @@
     <style>
         :root { --primary: #0f172a; --secondary: #334155; --bg-light: #f8fafc; --white: #ffffff; --gold: #c5a059; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--secondary); line-height: 1.6; margin: 0; }
-        h1, h2 { font-family: 'Playfair Display', serif; color: var(--primary); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
         
         nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; }
-        .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; text-decoration: none; font-size: 1.1rem; display:flex; gap:10px; align-items:center; }
-        .back-link { text-decoration: none; color: var(--secondary); font-size: 0.9rem; font-weight: 500; }
+        .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; font-size: 1.1rem; display:flex; gap:10px; align-items:center; }
+        .back-link { color: var(--secondary); font-size: 0.9rem; font-weight: 500; }
         .back-link:hover { color: var(--primary); }
 
         .header-section { background: var(--primary); color: white; padding: 80px 20px; text-align: center; }
@@ -23,23 +24,10 @@
 
         .content-container { max-width: 1000px; margin: -40px auto 60px auto; padding: 0 20px; position: relative; z-index: 10; }
         
-        /* Karta-sektion med "Maskering" */
+        /* STOR KARTA (Fastigheter) - Med maskering av toppmenyn */
         .map-section { margin-bottom: 60px; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        
-        .map-frame { 
-            width: 100%; 
-            height: 500px; 
-            overflow: hidden; /* Klipper bort kanter */
-            border-radius: 4px; 
-            position: relative;
-        }
-        
-        .map-frame iframe {
-            width: 100%;
-            height: 115%; /* Gör kartan lite högre än rutan... */
-            margin-top: -55px; /* ...och drar upp den för att dölja den grå listen! */
-            border: 0;
-        }
+        .map-frame { width: 100%; height: 500px; overflow: hidden; border-radius: 4px; position: relative; }
+        .map-frame iframe { width: 100%; height: 115%; margin-top: -55px; border: 0; }
 
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         .info-card { background: white; padding: 40px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-top: 4px solid var(--primary); }
@@ -47,10 +35,17 @@
         .btn-action { display: inline-block; margin-top: 20px; font-weight: 600; color: var(--primary); text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 2px; transition: 0.3s; }
         .btn-action:hover { color: var(--gold); border-color: transparent; }
 
-        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #999; margin-top: 40px; border-top: 1px solid #eee; }
+        /* --- FOOTER (Identisk med de andra sidorna) --- */
+        footer { background: var(--primary); color: #94a3b8; padding: 60px 5%; margin-top: 80px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
+        .footer-col h4 { color: white; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; font-family: 'Inter', sans-serif; }
+        
+        /* LITEN KARTA (Kontor) */
+        .footer-map-container { width: 100%; height: 250px; border-radius: 4px; overflow: hidden; border: 1px solid #334155; }
+        .footer-map-container iframe { width: 100%; height: 100%; border: 0; }
 
         @media (max-width: 768px) { 
-            .info-grid { grid-template-columns: 1fr; } 
+            .info-grid, .footer-content { grid-template-columns: 1fr; } 
             .map-frame { height: 350px; }
             .header-section { padding: 60px 20px 80px 20px; }
         }
@@ -75,7 +70,7 @@
             <iframe src="https://www.google.com/maps/d/u/2/embed?mid=1XjMECHs6G5xvyoWzMN_jJKygHg75GdM&ehbc=2E312F" width="100%"></iframe>
         </div>
         <p style="text-align: center; font-size: 0.85rem; color: #888; margin-top: 10px;">
-            <i class="fa-solid fa-info-circle"></i> Använd kartan för att se våra fastigheter i Hässleholm och Tyringe.
+            <i class="fa-solid fa-info-circle"></i> Använd kartan för att se var våra fastigheter ligger.
         </p>
     </div>
 
@@ -83,22 +78,38 @@
         <div class="info-card">
             <h3><i class="fa-solid fa-house-user"></i> Bostäder</h3>
             <p>Vårt bestånd består av 340 lägenheter. Vi har allt från kvadratsmarta ettor till stora representativa våningar.</p>
-            <p style="margin-top:15px;">Just nu publicerar vi inte lediga objekt direkt på hemsidan, men du är varmt välkommen att skicka en intresseanmälan så kontaktar vi dig när något passande dyker upp.</p>
+            <p style="margin-top:15px;">Just nu publicerar vi inte lediga objekt direkt på hemsidan, men du är varmt välkommen att skicka en intresseanmälan.</p>
             <a href="mailto:info@almquistfastigheter.se?subject=Intresseanmälan Bostad" class="btn-action">Skicka intresseanmälan →</a>
         </div>
         <div class="info-card">
             <h3><i class="fa-solid fa-briefcase"></i> Lokaler</h3>
             <p>Söker ni lokal för butik, kontor eller annan verksamhet? Vi förvaltar kommersiella ytor i strategiska lägen med goda kommunikationer.</p>
-            <p style="margin-top:15px;">Kontakta oss för att diskutera era behov och se vad som är ledigt eller kommer bli ledigt inom kort.</p>
             <a href="mailto:info@almquistfastigheter.se?subject=Förfrågan Lokal" class="btn-action">Kontakta oss om lokaler →</a>
         </div>
     </div>
-
 </div>
 
-<footer>
-    <p>© 2025 L Almquist Fastighetsförvaltning</p>
+<footer id="kontakt">
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>L Almquist Fastighetsförvaltning</h4>
+            <p><i class="fa-solid fa-map-pin"></i> Tingshusgatan 8, 281 30 Hässleholm</p>
+            <p><i class="fa-solid fa-envelope"></i> Box 44, 281 21 Hässleholm</p>
+            <br>
+            <p><i class="fa-solid fa-phone"></i> <strong>0451-145 58</strong></p>
+            <p style="font-size: 0.85rem; opacity: 0.7;">Vardagar 09:00 - 12:00</p>
+            <p><i class="fa-solid fa-at"></i> info@almquistfastigheter.se</p>
+        </div>
+        <div class="footer-col">
+            <h4>Hitta hit (Kontor)</h4>
+            <div class="footer-map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2238.643336780761!2d13.7635299!3d56.1594911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653f607a972173f%3A0x6a15e3c75a40871!2sTingshusgatan%208%2C%20281%2031%20H%C3%A4ssleholm!5e0!3m2!1ssv!2sse!4v1709214000000!5m2!1ssv!2sse" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center; border-top:1px solid #334155; padding-top:20px; font-size:0.8rem;">
+        <p>© 2025 L Almquist Fastighetsförvaltning</p>
+    </div>
 </footer>
-
 </body>
 </html>
