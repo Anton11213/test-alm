@@ -3,28 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Bostäder & Lokaler - L Almquist</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #0f172a; --secondary: #334155; --bg-light: #f8fafc; --white: #ffffff; }
+        :root { --primary: #0f172a; --secondary: #334155; --bg-light: #f8fafc; --white: #ffffff; --gold: #c5a059; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--secondary); line-height: 1.6; margin: 0; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); }
         nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; }
-        .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; font-size: 1.1rem; display:flex; gap:10px; align-items:center; }
-        .header-section { background: var(--primary); color: white; padding: 60px 20px; text-align: center; }
-        .content-container { max-width: 1000px; margin: -40px auto 60px auto; padding: 0 20px; position: relative; }
+        .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; font-size: 1.1rem; display:flex; gap:10px; align-items:center; text-decoration:none; }
+        .header-section { background: var(--primary); color: white; padding: 80px 20px; text-align: center; }
+        .header-section h1 { color: white; margin-bottom: 15px; font-size: 2.5rem; }
+        .content-container { max-width: 1000px; margin: -40px auto 60px auto; padding: 0 20px; position: relative; z-index: 10; }
+        .map-section { margin-bottom: 60px; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .map-frame { width: 100%; height: 500px; overflow: hidden; border-radius: 4px; position: relative; }
+        .map-frame iframe { width: 100%; height: 115%; margin-top: -55px; border: 0; }
         .info-card { background: white; padding: 40px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-top: 4px solid var(--primary); margin-bottom: 30px; }
         .btn-action { display: inline-block; margin-top: 20px; padding: 12px 25px; background-color: var(--secondary); color: white; border-radius: 4px; font-weight: 600; cursor: pointer; border: none; }
+        .btn-action:hover { background-color: var(--primary); transform: translateY(-2px); }
         .expandable-form { display: none; margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
         .form-group { margin-bottom: 15px; }
-        .form-control { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; }
-        .gdpr-text { font-size: 0.8rem; color: #64748b; margin: 15px 0; line-height: 1.4; }
-        .checkbox-group { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        .gdpr-text { font-size: 0.8rem; color: #64748b; margin: 15px 0; }
+        .checkbox-group { display: flex; gap: 15px; flex-wrap: wrap; }
+        footer { background: var(--primary); color: #94a3b8; padding: 60px 5%; margin-top: 80px; }
     </style>
 </head>
 <body>
 
 <nav>
     <a href="index.html" class="logo"><i class="fa-solid fa-building"></i> L Almquist</a>
-    <a href="index.html" style="font-size: 0.9rem;">
+    <a href="index.html" style="text-decoration:none; color:var(--secondary);">← Startsida</a>
+</nav>
+
+<div class="header-section">
+    <h1>Hitta hem hos L Almquist</h1>
+    <p>Utforska våra områden och anmäl ditt intresse direkt här på sidan.</p>
+</div>
+
+<div class="content-container">
+    <div class="map-section">
+        <div class="map-frame">
+            <iframe src="https://www.google.com/maps/d/u/2/embed?mid=1XjMECHs6G5xvyoWzMN_jJKygHg75GdM&ehbc=2E312F" width="100%"></iframe>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h3><i class="fa-solid fa-house"></i> Bostäder</h3>
+        <p>Vi har 340 lägenheter i varierande storlek. Fyll i formuläret nedan för att registrera ditt intresse.</p>
+        <button class="btn-action" onclick="toggleForm('hForm')">Gör intresseanmälan</button>
+
+        <div id="hForm" class="expandable-form">
+            <div class="form-group"><label>Namn:*</label><input type="text" id="h_name" class="form-control"></div>
+            <div class="form-group"><label>Personnummer:*</label><input type="text" id="h_pnr" class="form-control"></div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
+                <div class="form-group"><label>Telefon:*</label><input type="tel" id="h_phone" class="form-control"></div>
+                <div class="form-group"><label>E-post:*</label><input type="email" id="h_email" class="form-control"></div>
+            </div>
+            <div class="form-group">
+                <label>Önskad storlek:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="1 rum"> 1 rum</label>
+                    <label><input type="checkbox" value="2 rum"> 2 rum</label>
+                    <label><input type="checkbox" value="3 rum"> 3 rum</label>
+                    <label><input type="checkbox" value="4 rum"> 4 rum</label>
+                    <label><input type="checkbox" value="5+ rum"> 5+ rum</label>
+                </div>
+            </div>
+            <p class="gdpr-text">Genom att skicka denna ansökan samtycker du till att L Almquist Fastighetsförvaltning behandlar dina personuppgifter enligt GDPR.</p>
+            <button class="btn-action" onclick="sendHousing()">Skicka anmälan</button>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h3><i class="fa-solid fa-briefcase"></i> Kommersiella lokaler</h3>
+        <p>Söker ni lokaler för butik, kontor eller annan verksamhet? Gör en förfrågan nedan.</p>
+        <button class="btn-action" onclick="toggleForm('cForm')">Gör lokalförfrågan</button>
+
+        <div id="cForm" class="expandable-form">
+            <div class="form-group"><label>Verksamhetens namn:*</label><input type="text" id="c_co" class="form-control"></div>
+            <div class="form-group"><label>Organisationsnummer:</label><input type="text" id="c_org" class="form-control"></div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
+                <div class="form-group"><label>Kontaktperson:*</label><input type="text" id="c_contact" class="form-control"></div>
+                <div class="form-group"><label>E-post:*</label><input type="email" id="c_email" class="form-control"></div>
+            </div>
+            <div class="form-group"><label>Önskad yta (ca kvm):</label><input type="text" id="c_sqm" class="form-control"></div>
+            <p class="gdpr-text">Genom att skicka denna förfrågan samtycker du till vår behandling av personuppgifter enligt GDPR.</p>
+            <button class="btn-action" onclick="sendComm()">Skicka förfrågan</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleForm(id) {
+        var f = document.getElementById(id);
+        f.style.display = (f.style.display === "block") ? "none" : "block";
+    }
+    function sendHousing() {
+        var n = document.getElementById("h_name").value;
+        var p = document.getElementById("h_phone").value;
+        if(!n || !p) { alert("Fyll i namn och telefon."); return; }
+        window.location.href = `mailto:info@almquistfastigheter.se?subject=Bostad-${n}&body=Namn: ${n}\nTelefon: ${p}`;
+    }
+    function sendComm() {
+        var n = document.getElementById("c_co").value;
+        if(!n) { alert("Fyll i verksamhetsnamn."); return; }
+        window.location.href = `mailto:info@almquistfastigheter.se?subject=Lokal-${n}&body=Företag: ${n}`;
+    }
+</script>
+</body>
+</html>
