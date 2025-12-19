@@ -9,24 +9,40 @@
     <style>
         :root { --primary: #0f172a; --secondary: #334155; --bg-light: #f8fafc; --white: #ffffff; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--secondary); margin: 0; }
-        nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; }
-        .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; text-decoration:none; }
+        
+        nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; position:sticky; top:0; z-index:100; }
+        .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; text-decoration:none; font-size: 1.1rem; display:flex; gap:10px; align-items:center; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--secondary); text-decoration: none; }
+        .nav-links a:hover { color: var(--primary); text-decoration: underline; }
+
         .container { max-width: 1000px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; }
-        .contact-info h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; }
+        .contact-info h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; color: var(--primary); }
         .contact-form { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary); }
         .form-control { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; }
         .btn-send { width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; transition: 0.3s; }
         .btn-send:hover { background: #1e293b; }
-        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
+        
+        footer { background: var(--primary); color: #94a3b8; padding: 60px 5%; margin-top: 80px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { color: white; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .footer-map-container { width: 100%; height: 250px; border-radius: 4px; overflow: hidden; border: 1px solid #334155; }
+        .footer-map-container iframe { width: 100%; height: 100%; border: 0; }
+
+        @media (max-width: 768px) { .container, .footer-content { grid-template-columns: 1fr; } .nav-links { display:none; } }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html" class="logo">L Almquist</a>
-    <a href="index.html" style="text-decoration:none; color:var(--secondary);">← Startsida</a>
+    <a href="index.html" class="logo"><i class="fa-solid fa-building"></i> L Almquist</a>
+    <div class="nav-links">
+        <a href="bostader.html">Bostäder & Lokaler</a>
+        <a href="hyresgast.html">För Hyresgäster</a>
+        <a href="kontakt.html" style="font-weight:bold; color:var(--primary);">Kontakt</a>
+    </div>
 </nav>
 
 <div class="container">
@@ -66,6 +82,25 @@
         <button class="btn-send" onclick="sendContact()">Skicka meddelande</button>
     </div>
 </div>
+
+<footer id="kontakt">
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>L Almquist Fastighetsförvaltning</h4>
+            <p><i class="fa-solid fa-map-pin"></i> Tingshusgatan 8, 281 30 Hässleholm</p>
+            <p><i class="fa-solid fa-phone"></i> 0451-145 58</p>
+            <p><i class="fa-solid fa-at"></i> info@almquistfastigheter.se</p>
+        </div>
+        <div class="footer-col">
+            <div class="footer-map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2238.643336780761!2d13.7635299!3d56.1594911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653f607a972173f%3A0x6a15e3c75a40871!2sTingshusgatan%208%2C%20281%2031%20H%C3%A4ssleholm!5e0!3m2!1ssv!2sse!4v1709214000000!5m2!1ssv!2sse" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center; border-top:1px solid #334155; padding-top:20px; font-size:0.8rem;">
+        <p>© 2025 L Almquist Fastighetsförvaltning</p>
+    </div>
+</footer>
 
 <script>
     function sendContact() {
