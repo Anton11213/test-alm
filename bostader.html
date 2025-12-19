@@ -8,11 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root { --primary: #0f172a; --secondary: #334155; --bg-light: #f8fafc; --white: #ffffff; --gold: #c5a059; }
+        :root { 
+            --primary: #0f172a;    /* Mörk marinblå */
+            --secondary: #334155;  /* Skiffergrå */
+            --accent: #475569;     /* Ljusare gråblå för borders/hover (Ersätter guld) */
+            --bg-light: #f8fafc;   
+            --white: #ffffff; 
+        }
+        
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--secondary); line-height: 1.6; margin: 0; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         
+        /* Navigation */
         nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; }
         .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; font-size: 1.1rem; display:flex; gap:10px; align-items:center; }
         .back-link { color: var(--secondary); font-size: 0.9rem; font-weight: 500; }
@@ -24,30 +32,51 @@
 
         .content-container { max-width: 1000px; margin: -40px auto 60px auto; padding: 0 20px; position: relative; z-index: 10; }
         
-        /* STOR KARTA (Fastigheter) - Med maskering av toppmenyn */
+        /* Karta */
         .map-section { margin-bottom: 60px; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .map-frame { width: 100%; height: 500px; overflow: hidden; border-radius: 4px; position: relative; }
         .map-frame iframe { width: 100%; height: 115%; margin-top: -55px; border: 0; }
 
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .info-card { background: white; padding: 40px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-top: 4px solid var(--primary); }
+        /* Grid Layout */
+        .info-grid { display: grid; grid-template-columns: 1fr; gap: 30px; } /* Startar med 1 kolumn för fokus */
         
-        .btn-action { display: inline-block; margin-top: 20px; font-weight: 600; color: var(--primary); text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 2px; transition: 0.3s; }
-        .btn-action:hover { color: var(--gold); border-color: transparent; }
+        /* Cards */
+        .info-card { background: white; padding: 40px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-top: 4px solid var(--primary); }
+        .info-card h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
 
-        /* --- FOOTER (Identisk med de andra sidorna) --- */
+        /* Knappar (Harmoniserade) */
+        .btn-action { 
+            display: inline-block; margin-top: 20px; padding: 12px 25px; 
+            background-color: var(--secondary); color: white; border-radius: 4px; font-weight: 600; cursor: pointer; border: none; font-family: 'Inter', sans-serif;
+        }
+        .btn-action:hover { background-color: var(--primary); transform: translateY(-2px); }
+
+        /* --- FORMULÄR STYLING --- */
+        #intresseForm { display: none; margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px; animation: slideDown 0.5s ease; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; color: var(--primary); }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 1rem; }
+        .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1); }
+
+        /* Checkboxar för rum */
+        .checkbox-group { display: flex; gap: 15px; flex-wrap: wrap; }
+        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; cursor: pointer; }
+        .checkbox-item input { width: 18px; height: 18px; accent-color: var(--primary); }
+
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- FOOTER --- */
         footer { background: var(--primary); color: #94a3b8; padding: 60px 5%; margin-top: 80px; }
         .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
         .footer-col h4 { color: white; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; font-family: 'Inter', sans-serif; }
-        
-        /* LITEN KARTA (Kontor) */
         .footer-map-container { width: 100%; height: 250px; border-radius: 4px; overflow: hidden; border: 1px solid #334155; }
         .footer-map-container iframe { width: 100%; height: 100%; border: 0; }
 
         @media (max-width: 768px) { 
-            .info-grid, .footer-content { grid-template-columns: 1fr; } 
             .map-frame { height: 350px; }
             .header-section { padding: 60px 20px 80px 20px; }
+            .checkbox-group { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -60,7 +89,7 @@
 
 <div class="header-section">
     <h1>Hitta hem hos L Almquist</h1>
-    <p>Vi förvaltar fastigheter i noggrant utvalda lägen. Oavsett om du söker pulsen i centrum eller lugnet i ett lummigt bostadsområde, har vi ett hem för dig.</p>
+    <p>Vi förvaltar fastigheter i noggrant utvalda lägen. Se var våra fastigheter finns och anmäl ditt intresse direkt här på sidan.</p>
 </div>
 
 <div class="content-container">
@@ -76,15 +105,69 @@
 
     <div class="info-grid">
         <div class="info-card">
-            <h3><i class="fa-solid fa-house-user"></i> Bostäder</h3>
-            <p>Vårt bestånd består av 340 lägenheter. Vi har allt från kvadratsmarta ettor till stora representativa våningar.</p>
-            <p style="margin-top:15px;">Just nu publicerar vi inte lediga objekt direkt på hemsidan, men du är varmt välkommen att skicka en intresseanmälan.</p>
-            <a href="mailto:info@almquistfastigheter.se?subject=Intresseanmälan Bostad" class="btn-action">Skicka intresseanmälan →</a>
+            <h3><i class="fa-solid fa-house-user"></i> Bostäder & Intresseanmälan</h3>
+            <p>Vi har 340 lägenheter, från ettor till stora våningar. Fyll i formuläret nedan för att registrera ditt intresse. Din anmälan sparas i 6 månader.</p>
+            
+            <button class="btn-action" onclick="toggleForm()">Gör intresseanmälan</button>
+
+            <div id="intresseForm">
+                <h4 style="margin-bottom: 20px; font-size: 1.2rem;">Dina uppgifter</h4>
+                
+                <div class="form-group">
+                    <label>Namn:</label>
+                    <input type="text" id="name" class="form-control" placeholder="Förnamn Efternamn">
+                </div>
+
+                <div class="form-group">
+                    <label>Personnummer:</label>
+                    <input type="text" id="pnr" class="form-control" placeholder="ÅÅMMDD-XXXX">
+                </div>
+
+                <div class="form-group">
+                    <label>Adress:</label>
+                    <input type="text" id="address" class="form-control" placeholder="Gatuadress">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>Postnummer:</label>
+                        <input type="text" id="zip" class="form-control" placeholder="123 45">
+                    </div>
+                    <div class="form-group">
+                        <label>Ort:</label>
+                        <input type="text" id="city" class="form-control" placeholder="Ort">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Telefon & E-post:</label>
+                    <input type="text" id="contact" class="form-control" placeholder="Telefonnummer och E-post">
+                </div>
+
+                <div class="form-group">
+                    <label>Önskad storlek (Välj en eller flera):</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="checkbox" value="1 ROK"> 1 ROK</label>
+                        <label class="checkbox-item"><input type="checkbox" value="2 ROK"> 2 ROK</label>
+                        <label class="checkbox-item"><input type="checkbox" value="3 ROK"> 3 ROK</label>
+                        <label class="checkbox-item"><input type="checkbox" value="4+ ROK"> 4+ ROK</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Övriga önskemål (t.ex. maxhyra, område):</label>
+                    <input type="text" id="message" class="form-control">
+                </div>
+
+                <button class="btn-action" onclick="sendEmail()">Skicka anmälan (via e-post)</button>
+            </div>
         </div>
+
         <div class="info-card">
-            <h3><i class="fa-solid fa-briefcase"></i> Lokaler</h3>
+            <h3><i class="fa-solid fa-briefcase"></i> Kommersiella Lokaler</h3>
             <p>Söker ni lokal för butik, kontor eller annan verksamhet? Vi förvaltar kommersiella ytor i strategiska lägen med goda kommunikationer.</p>
-            <a href="mailto:info@almquistfastigheter.se?subject=Förfrågan Lokal" class="btn-action">Kontakta oss om lokaler →</a>
+            <p style="margin-top:15px;">Kontakta oss direkt via mejl för att diskutera era behov.</p>
+            <a href="mailto:info@almquistfastigheter.se?subject=Förfrågan Lokal" class="btn-action">Kontakta oss om lokaler</a>
         </div>
     </div>
 </div>
@@ -111,5 +194,52 @@
         <p>© 2025 L Almquist Fastighetsförvaltning</p>
     </div>
 </footer>
+
+<script>
+    // Funktion för att visa/dölja formuläret
+    function toggleForm() {
+        var form = document.getElementById("intresseForm");
+        if (form.style.display === "block") {
+            form.style.display = "none";
+        } else {
+            form.style.display = "block";
+        }
+    }
+
+    // Funktion för att samla ihop data och öppna mejlprogrammet
+    function sendEmail() {
+        var name = document.getElementById("name").value;
+        var pnr = document.getElementById("pnr").value;
+        var address = document.getElementById("address").value;
+        var zip = document.getElementById("zip").value;
+        var city = document.getElementById("city").value;
+        var contact = document.getElementById("contact").value;
+        var message = document.getElementById("message").value;
+
+        // Samla in valda rum
+        var sizes = [];
+        var checkboxes = document.querySelectorAll('.checkbox-group input:checked');
+        checkboxes.forEach((checkbox) => {
+            sizes.push(checkbox.value);
+        });
+
+        if(name === "" || contact === "") {
+            alert("Vänligen fyll i minst Namn och Kontaktuppgifter.");
+            return;
+        }
+
+        var subject = "Intresseanmälan Bostad - " + name;
+        var body = "Hej L Almquist,\n\nHärmed skickar jag en intresseanmälan.\n\n" +
+                   "NAMN: " + name + "\n" +
+                   "PERSONNUMMER: " + pnr + "\n" +
+                   "ADRESS: " + address + ", " + zip + " " + city + "\n" +
+                   "KONTAKT: " + contact + "\n\n" +
+                   "ÖNSKAD STORLEK: " + sizes.join(", ") + "\n" +
+                   "ÖVRIGT: " + message;
+
+        window.location.href = "mailto:info@almquistfastigheter.se?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+</script>
+
 </body>
 </html>
