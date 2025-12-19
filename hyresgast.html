@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>För Hyresgäster - L Almquist Fastighetsförvaltning</title>
+    <title>För Hyresgäster - L Almquist</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -14,11 +14,12 @@
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         
-        /* Navigation */
+        /* Navigation (Standardiserad) */
         nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; }
         .logo { font-weight: 700; color: var(--primary); text-transform: uppercase; font-size: 1.1rem; display:flex; gap:10px; align-items:center; }
-        .back-link { color: var(--secondary); font-size: 0.9rem; font-weight: 500; }
-        .back-link:hover { color: var(--primary); }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--secondary); }
+        .nav-links a:hover { color: var(--primary); text-decoration: underline; }
 
         /* Innehåll */
         .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
@@ -48,12 +49,16 @@
         .jour-box { background: #f1f5f9; padding: 25px; border-radius: 4px; border: 1px solid #e2e8f0; }
         .phone-number { font-size: 1.3rem; font-weight: 700; color: var(--primary); display: block; margin-top: 15px; }
 
-        /* Formulär */
-        .btn-action { display: inline-block; margin-top: 15px; padding: 12px 25px; background-color: var(--secondary); color: white; border-radius: 4px; font-weight: 600; cursor: pointer; border: none; }
+        /* Formulär och Knappar */
+        .btn-action { display: inline-block; margin-top: 15px; padding: 12px 25px; background-color: var(--secondary); color: white; border-radius: 4px; font-weight: 600; cursor: pointer; border: none; font-family: 'Inter', sans-serif; }
         .btn-action:hover { background-color: var(--primary); }
-        .expandable-form { display: none; margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
+        
+        .expandable-form { display: none; margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px; animation: slideDown 0.5s ease; }
         .form-group { margin-bottom: 20px; }
         .form-control { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        .form-label { font-weight: 600; font-size: 0.9rem; color: var(--primary); display: block; margin-bottom: 5px; }
+        
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Footer */
         footer { background: var(--primary); color: #94a3b8; padding: 60px 5%; margin-top: 80px; }
@@ -62,14 +67,21 @@
         .footer-map-container { width: 100%; height: 250px; border-radius: 4px; overflow: hidden; border: 1px solid #334155; }
         .footer-map-container iframe { width: 100%; height: 100%; border: 0; }
 
-        @media (max-width: 768px) { .jour-grid, .footer-content { grid-template-columns: 1fr; } .page-title h1 { font-size: 2rem; } }
+        @media (max-width: 768px) { 
+            .jour-grid, .footer-content { grid-template-columns: 1fr; } 
+            .nav-links { display: none; } /* Enkelhet för mobil just nu */
+        }
     </style>
 </head>
 <body>
 
 <nav>
     <a href="index.html" class="logo"><i class="fa-solid fa-building"></i> L Almquist</a>
-    <a href="index.html" class="back-link">← Tillbaka till startsidan</a>
+    <div class="nav-links">
+        <a href="bostader.html">Bostäder & Lokaler</a>
+        <a href="hyresgast.html" style="font-weight:bold; color:var(--primary);">För Hyresgäster</a>
+        <a href="kontakt.html">Kontakt</a>
+    </div>
 </nav>
 
 <div class="container">
@@ -81,7 +93,7 @@
     <div class="info-block" id="felanmalan">
         <h3><i class="fa-solid fa-screwdriver-wrench"></i> Felanmälan</h3>
         <div class="alert-box">
-            <i class="fa-solid fa-circle-info"></i> <strong>Observera:</strong> Fel rörande tjänster med egna avtal (t.ex. bredband, TV-paket eller hushållsel) anmäls direkt till din respektive tjänsteleverantör.
+            <i class="fa-solid fa-circle-info"></i> <strong>Observera:</strong> Fel rörande tjänster med egna avtal (t.ex. bredband, TV-paket eller hushållsel) anmäls direkt till respektive leverantör.
         </div>
         <p>Vid fel i lägenheten eller fastigheten gör du enklast en felanmälan via formuläret nedan. Vi åtgärdar felen så snart vi kan under ordinarie arbetstid.</p>
         
@@ -89,27 +101,27 @@
 
         <div id="faultForm" class="expandable-form">
             <div class="form-group">
-                <label>Namn:*</label>
+                <label class="form-label">Namn:*</label>
                 <input type="text" id="f_name" class="form-control" placeholder="Förnamn Efternamn">
             </div>
             <div class="form-group">
-                <label>Adress & Lägenhetsnr:*</label>
+                <label class="form-label">Adress & Lägenhetsnr:*</label>
                 <input type="text" id="f_address" class="form-control" placeholder="Gatuadress och lgh-nummer">
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <div class="form-group"><label>Telefon:*</label><input type="tel" id="f_phone" class="form-control"></div>
-                <div class="form-group"><label>E-post:*</label><input type="email" id="f_email" class="form-control"></div>
+                <div class="form-group"><label class="form-label">Telefon:*</label><input type="tel" id="f_phone" class="form-control"></div>
+                <div class="form-group"><label class="form-label">E-post:*</label><input type="email" id="f_email" class="form-control"></div>
             </div>
             <div class="form-group">
-                <label>Får vi använda huvudnyckel?*</label>
+                <label class="form-label">Får vi använda huvudnyckel?*</label>
                 <select id="f_key" class="form-control">
                     <option value="">-- Välj ett alternativ --</option>
                     <option value="JA">Ja, ni får gå in med huvudnyckel</option>
-                    <option value="NEJ">No, kontakta mig för tidbokning</option>
+                    <option value="NEJ">Nej, kontakta mig för tidbokning</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>Beskrivning av felet:*</label>
+                <label class="form-label">Beskrivning av felet:*</label>
                 <textarea id="f_desc" class="form-control" style="height:120px;" placeholder="Beskriv felet noggrant..."></textarea>
             </div>
             <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">Genom att skicka felanmälan samtycker du till vår behandling av personuppgifter enligt GDPR.</p>
@@ -154,7 +166,8 @@
             <div class="accordion-item">
                 <button class="accordion-header">Fixa och måla om</button>
                 <div class="accordion-content">
-                    Du får måla och tapetsera om själv, men arbetet måste vara fackmannamässigt utfört. Tänk på att välja neutrala färger. Du bör alltid <a href="kontakt.html" style="text-decoration:underline; font-weight:600;">kontakta oss</a> för ett godkännande innan du påbörjar några arbeten.
+                    Du får måla och tapetsera om själv, men arbetet måste vara fackmannamässigt utfört. Tänk på att välja neutrala färger. <br><br>
+                    <strong>Viktigt:</strong> Du bör alltid <a href="kontakt.html" style="text-decoration:underline; font-weight:600;">kontakta oss</a> för ett godkännande innan du påbörjar några arbeten.
                 </div>
             </div>
             <div class="accordion-item">
@@ -184,8 +197,35 @@
 
     <div class="info-block" id="uppsagning">
         <h3><i class="fa-solid fa-file-signature"></i> Uppsägning</h3>
-        <p>Uppsägning av hyresavtal ska ske skriftligen. Uppsägningstiden är normalt tre (3) kalendermånader.</p>
-        <a href="kontakt.html" class="btn-action">Kontakta oss för blankett</a>
+        <p>Uppsägning av hyresavtal ska ske skriftligen. Efter att vi mottagit din uppsägning skickar vi en skriftlig bekräftelse via post. I detta brev medföljer även städinstruktioner och viktig information inför avflyttning.</p>
+        <p><strong>Viktigt:</strong> Var uppmärksam på att du mottar bekräftelsen. Om du inte har möjlighet att posta ditt kontrakt kan du använda formuläret nedan, men vi rekommenderar att du även ringer oss under kontorstid.</p>
+        
+        <button class="btn-action" onclick="toggleForm('termForm')">Gör uppsägning</button>
+
+        <div id="termForm" class="expandable-form">
+            <div class="form-group">
+                <label class="form-label">Datum för uppsägning:*</label>
+                <input type="date" id="u_date" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Namn (Huvudhyresgäst):*</label>
+                <input type="text" id="u_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Adress & Lägenhetsnr:*</label>
+                <input type="text" id="u_address" class="form-control">
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="form-group"><label class="form-label">Telefon:*</label><input type="tel" id="u_phone" class="form-control"></div>
+                <div class="form-group"><label class="form-label">E-post:*</label><input type="email" id="u_email" class="form-control"></div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Meddelande / Kommentar:</label>
+                <textarea id="u_msg" class="form-control" style="height:100px;"></textarea>
+            </div>
+            <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">Genom att skicka uppsägningen samtycker du till vår behandling av personuppgifter enligt GDPR.</p>
+            <button class="btn-action" onclick="sendTermination()">Skicka uppsägning</button>
+        </div>
     </div>
 </div>
 
@@ -199,7 +239,7 @@
         </div>
         <div class="footer-col">
             <div class="footer-map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2232.894383186178!2d13.763435877292212!3d56.15891336113175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653f56e9c937169%3A0xc3f60893019808a3!2sTingshusgatan%208%2C%20281%2030%20H%C3%A4ssleholm!5e0!3m2!1ssv!2sse!4v1700000000000!5m2!1ssv!2sse" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2238.643336780761!2d13.7635299!3d56.1594911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653f607a972173f%3A0x6a15e3c75a40871!2sTingshusgatan%208%2C%20281%2031%20H%C3%A4ssleholm!5e0!3m2!1ssv!2sse!4v1709214000000!5m2!1ssv!2sse" loading="lazy"></iframe>
             </div>
         </div>
     </div>
@@ -209,7 +249,7 @@
 </footer>
 
 <script>
-    // Accordion
+    // Accordion Logic
     document.querySelectorAll('.accordion-header').forEach(button => {
         button.addEventListener('click', () => {
             const item = button.parentElement;
@@ -217,11 +257,13 @@
         });
     });
 
+    // Toggle Form Logic
     function toggleForm(id) {
         var f = document.getElementById(id);
         f.style.display = (f.style.display === "block") ? "none" : "block";
     }
 
+    // Send Fault Report
     function sendFaultReport() {
         var name = document.getElementById("f_name").value;
         var addr = document.getElementById("f_address").value;
@@ -233,6 +275,21 @@
         
         var body = `NAMN: ${name}\nADRESS: ${addr}\nTELEFON: ${phone}\n\nHUVUDNYCKEL: ${key}\n\nBESKRIVNING:\n${desc}`;
         window.location.href = `mailto:info@almquistfastigheter.se?subject=Felanmälan - ${addr}&body=${encodeURIComponent(body)}`;
+    }
+
+    // Send Termination (Uppsägning)
+    function sendTermination() {
+        var date = document.getElementById("u_date").value;
+        var name = document.getElementById("u_name").value;
+        var addr = document.getElementById("u_address").value;
+        var phone = document.getElementById("u_phone").value;
+        var email = document.getElementById("u_email").value;
+        var msg = document.getElementById("u_msg").value;
+
+        if(!date || !name || !addr || !phone || !email) { alert("Vänligen fyll i alla obligatoriska fält."); return; }
+
+        var body = `UPPSÄGNINGSDATUM: ${date}\nNAMN: ${name}\nADRESS: ${addr}\nTELEFON: ${phone}\nE-POST: ${email}\n\nMEDDELANDE:\n${msg}`;
+        window.location.href = `mailto:info@almquistfastigheter.se?subject=Uppsägning - ${addr}&body=${encodeURIComponent(body)}`;
     }
 </script>
 
