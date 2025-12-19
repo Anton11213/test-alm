@@ -467,9 +467,9 @@
 
         <div class="info-block" id="uppsagning">
             <h3><i class="fa-solid fa-file-signature"></i> Uppsägning</h3>
-            <p>Uppsägning av hyresavtal ska ske skriftligen. Efter att vi mottagit din uppsägning skickar vi en
-                skriftlig bekräftelse via post. I detta brev medföljer även städinstruktioner och viktig information
-                inför avflyttning.</p>
+            <p>Uppsägningstiden är tre kalendermånader och räknas från nästa månadsskifte efter att uppsägningen
+                inkommit. En skriftlig bekräftelse på uppsägningen kommer att skickas till dig via post till din
+                folkbokföringsadress.</p>
             <p><strong>Viktigt:</strong> Var uppmärksam på att du mottar bekräftelsen. Om du inte har möjlighet att
                 posta ditt kontrakt kan du använda formuläret nedan, men vi rekommenderar att du även ringer oss under
                 kontorstid.</p>
@@ -478,25 +478,25 @@
 
             <div id="termForm" class="expandable-form">
                 <div class="form-group">
-                    <label class="form-label">Datum för uppsägning:*</label>
+                    <label class="form-label">Dagens datum:*</label>
                     <input type="date" id="u_date" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Namn (Huvudhyresgäst):*</label>
+                    <label class="form-label">Namn:*</label>
                     <input type="text" id="u_name" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Adress & Lägenhetsnr:*</label>
+                    <label class="form-label">Nuvarande adress:*</label>
                     <input type="text" id="u_address" class="form-control">
                 </div>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                    <div class="form-group"><label class="form-label">Telefon:*</label><input type="tel" id="u_phone"
-                            class="form-control"></div>
+                    <div class="form-group"><label class="form-label">Telefonnummer:*</label><input type="tel"
+                            id="u_phone" class="form-control"></div>
                     <div class="form-group"><label class="form-label">E-post:*</label><input type="email" id="u_email"
                             class="form-control"></div>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Meddelande / Kommentar:</label>
+                    <label class="form-label">Meddelande / Ny adress:</label>
                     <textarea id="u_msg" class="form-control" style="height:100px;"></textarea>
                 </div>
                 <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">Genom att skicka uppsägningen
@@ -528,54 +528,53 @@
     </footer>
 
     <script>
-        <script>
-            function toggleMenu() {
-        var menu = document.getElementById("navLinks");
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
             menu.classList.toggle("active");
-    }
+        }
 
-    // Accordion Logic
-    document.querySelectorAll('.accordion-header').forEach(button => {
-                button.addEventListener('click', () => {
-                    const item = button.parentElement;
-                    item.classList.toggle('active');
-                });
-    });
+        // Accordion Logic
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                item.classList.toggle('active');
+            });
+        });
 
-            // Toggle Form Logic
-            function toggleForm(id) {
-        var f = document.getElementById(id);
+        // Toggle Form Logic
+        function toggleForm(id) {
+            var f = document.getElementById(id);
             f.style.display = (f.style.display === "block") ? "none" : "block";
-    }
+        }
 
-            // Send Fault Report
-            function sendFaultReport() {
-        var name = document.getElementById("f_name").value;
+        // Send Fault Report
+        function sendFaultReport() {
+            var name = document.getElementById("f_name").value;
             var addr = document.getElementById("f_address").value;
             var key = document.getElementById("f_key").value;
             var desc = document.getElementById("f_desc").value;
             var phone = document.getElementById("f_phone").value;
 
-            if(!name || !addr || !key || !desc) {alert("Vänligen fyll i alla obligatoriska fält."); return; }
+            if (!name || !addr || !key || !desc) { alert("Vänligen fyll i alla obligatoriska fält."); return; }
 
             var body = `NAMN: ${name}\nADRESS: ${addr}\nTELEFON: ${phone}\n\nHUVUDNYCKEL: ${key}\n\nBESKRIVNING:\n${desc}`;
             window.location.href = `mailto:info@almquistfastigheter.se?subject=Felanmälan - ${addr}&body=${encodeURIComponent(body)}`;
-    }
+        }
 
-            // Send Termination (Uppsägning)
-            function sendTermination() {
-        var date = document.getElementById("u_date").value;
+        // Send Termination (Uppsägning)
+        function sendTermination() {
+            var date = document.getElementById("u_date").value;
             var name = document.getElementById("u_name").value;
             var addr = document.getElementById("u_address").value;
             var phone = document.getElementById("u_phone").value;
             var email = document.getElementById("u_email").value;
             var msg = document.getElementById("u_msg").value;
 
-            if(!date || !name || !addr || !phone || !email) {alert("Vänligen fyll i alla obligatoriska fält."); return; }
+            if (!date || !name || !addr || !phone || !email) { alert("Vänligen fyll i alla obligatoriska fält."); return; }
 
             var body = `UPPSÄGNINGSDATUM: ${date}\nNAMN: ${name}\nADRESS: ${addr}\nTELEFON: ${phone}\nE-POST: ${email}\n\nMEDDELANDE:\n${msg}`;
             window.location.href = `mailto:info@almquistfastigheter.se?subject=Uppsägning - ${addr}&body=${encodeURIComponent(body)}`;
-    }
+        }
     </script>
 
 </body>
