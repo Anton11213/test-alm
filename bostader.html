@@ -276,7 +276,10 @@
 
         <div class="info-card">
             <h3><i class="fa-solid fa-house"></i> Bostäder</h3>
-            <p>Vi har 340 lägenheter i varierande storlek. Fyll i formuläret nedan för att registrera ditt intresse.</p>
+            <p>Vi erbjuder ett brett och varierat utbud av hyresrätter och lokaler i Hässleholm och Tyringe. Från
+                yteffektiva ettor till rymliga familjebostäder och sekelskiftesvåningar med karaktär. Oavsett var i
+                livet du befinner dig har vi ett hem för dig. Fyll i formuläret nedan för att registrera ditt intresse.
+            </p>
             <button class="btn-action" onclick="toggleForm('hForm')">Gör intresseanmälan</button>
 
             <div id="hForm" class="expandable-form">
@@ -298,6 +301,10 @@
                         <label><input type="checkbox" value="4 rum"> 4 rum</label>
                         <label><input type="checkbox" value="5+ rum"> 5+ rum</label>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label>Önskemål / Meddelande:</label>
+                    <textarea id="h_msg" class="form-control" rows="4"></textarea>
                 </div>
                 <p class="gdpr-text">Genom att skicka denna ansökan samtycker du till att L Almquist
                     Fastighetsförvaltning behandlar dina personuppgifter enligt GDPR.</p>
@@ -321,12 +328,64 @@
                     <div class="form-group"><label>E-post:*</label><input type="email" id="c_email"
                             class="form-control"></div>
                 </div>
+                <div class="form-group"><label>Typ av verksamhet:</label>
+                    <select id="c_type" class="form-control">
+                        <option value="">Välj typ...</option>
+                        <option value="Kontor">Kontor</option>
+                        <option value="Butik">Butik</option>
+                        <option value="Restaurang">Restaurang</option>
+                        <option value="Lager">Lager</option>
+                        <option value="Annat">Annat</option>
+                    </select>
+                </div>
                 <div class="form-group"><label>Önskad yta (ca kvm):</label><input type="text" id="c_sqm"
                         class="form-control"></div>
+                <div class="form-group">
+                    <label>Önskemål / Meddelande:</label>
+                    <textarea id="c_msg" class="form-control" rows="4"></textarea>
+                </div>
                 <p class="gdpr-text">Genom att skicka denna förfrågan samtycker du till vår behandling av
                     personuppgifter enligt GDPR.</p>
                 <button class="btn-action" onclick="sendComm()">Skicka förfrågan</button>
             </div>
+        </div>
+
+        <div class="info-card" id="fastigheter">
+            <h2>Våra Fastigheter</h2>
+
+            <h3 style="margin-top:20px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">Hässleholm</h3>
+
+            <h4 style="margin-top:15px; font-size:1.1rem;">Centrum</h4>
+            <details style="margin-bottom:10px;">
+                <summary style="cursor:pointer; color:var(--primary); font-weight:500;">Visa adresser</summary>
+                <div style="padding:10px; background:#f1f5f9; margin-top:5px; border-radius:4px;">
+                    <!-- Placeholder för adresser -->
+                </div>
+            </details>
+
+            <h4 style="margin-top:15px; font-size:1.1rem;">Väster</h4>
+            <details style="margin-bottom:10px;">
+                <summary style="cursor:pointer; color:var(--primary); font-weight:500;">Visa adresser</summary>
+                <div style="padding:10px; background:#f1f5f9; margin-top:5px; border-radius:4px;">
+                    <!-- Placeholder för adresser -->
+                </div>
+            </details>
+
+            <h4 style="margin-top:15px; font-size:1.1rem;">Stattena</h4>
+            <details style="margin-bottom:10px;">
+                <summary style="cursor:pointer; color:var(--primary); font-weight:500;">Visa adresser</summary>
+                <div style="padding:10px; background:#f1f5f9; margin-top:5px; border-radius:4px;">
+                    <!-- Placeholder för adresser -->
+                </div>
+            </details>
+
+            <h3 style="margin-top:30px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">Tyringe</h3>
+            <details style="margin-bottom:10px; margin-top:15px;">
+                <summary style="cursor:pointer; color:var(--primary); font-weight:500;">Visa adresser</summary>
+                <div style="padding:10px; background:#f1f5f9; margin-top:5px; border-radius:4px;">
+                    <!-- Placeholder för adresser -->
+                </div>
+            </details>
         </div>
     </div>
 
