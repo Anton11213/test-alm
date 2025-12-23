@@ -469,6 +469,47 @@
                             <li><strong>Flyttstädning:</strong> Lägenheten ska vara noggrant städad inklusive biutrymmen
                                 som balkong och förråd vid nyckelåterlämning.</li>
                         </ul>
+
+                        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+                            <h4
+                                style="color:var(--primary); font-family:'Playfair Display', serif; margin-bottom:15px; font-size:1.1rem;">
+                                Säg upp ditt kontrakt</h4>
+                            <p style="margin-bottom:15px;">Om du vill säga upp ditt kontrakt digitalt kan du använda
+                                formuläret nedan. Vi rekommenderar att du alltid ringer oss för att bekräfta att
+                                uppsägningen mottagits om du inte får en bekräftelse inom några dagar.</p>
+
+                            <button class="btn-action" onclick="toggleForm('uBoxForm')">Öppna
+                                uppsägningsformulär</button>
+
+                            <div id="uBoxForm" class="expandable-form">
+                                <div class="form-group">
+                                    <label class="form-label">Dagens datum:*</label>
+                                    <input type="date" id="u_date" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Namn:*</label>
+                                    <input type="text" id="u_name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Nuvarande adress:*</label>
+                                    <input type="text" id="u_address" class="form-control">
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                    <div class="form-group"><label class="form-label">Telefonnummer:*</label><input
+                                            type="tel" id="u_phone" class="form-control"></div>
+                                    <div class="form-group"><label class="form-label">E-post:*</label><input
+                                            type="email" id="u_email" class="form-control"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Meddelande / Ny adress:</label>
+                                    <textarea id="u_msg" class="form-control" style="height:100px;"></textarea>
+                                </div>
+                                <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">Genom att skicka
+                                    uppsägningen
+                                    samtycker du till vår behandling av personuppgifter enligt GDPR.</p>
+                                <button class="btn-action" onclick="sendTermination()">Skicka uppsägning</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -677,45 +718,7 @@
             </div>
         </div>
 
-        <div class="info-block" id="uppsagning">
-            <h3><i class="fa-solid fa-file-signature"></i> Uppsägning</h3>
-            <p>Uppsägningstiden är tre kalendermånader och räknas från nästa månadsskifte efter att uppsägningen
-                inkommit. En skriftlig bekräftelse på uppsägningen kommer att skickas till dig via post till din
-                folkbokföringsadress.</p>
-            <p><strong>Viktigt:</strong> Var uppmärksam på att du mottar bekräftelsen. Om du inte har möjlighet att
-                posta ditt kontrakt kan du använda formuläret nedan, men vi rekommenderar att du även ringer oss under
-                kontorstid.</p>
 
-            <button class="btn-action" onclick="toggleForm('termForm')">Gör uppsägning</button>
-
-            <div id="termForm" class="expandable-form">
-                <div class="form-group">
-                    <label class="form-label">Dagens datum:*</label>
-                    <input type="date" id="u_date" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Namn:*</label>
-                    <input type="text" id="u_name" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Nuvarande adress:*</label>
-                    <input type="text" id="u_address" class="form-control">
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                    <div class="form-group"><label class="form-label">Telefonnummer:*</label><input type="tel"
-                            id="u_phone" class="form-control"></div>
-                    <div class="form-group"><label class="form-label">E-post:*</label><input type="email" id="u_email"
-                            class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Meddelande / Ny adress:</label>
-                    <textarea id="u_msg" class="form-control" style="height:100px;"></textarea>
-                </div>
-                <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">Genom att skicka uppsägningen
-                    samtycker du till vår behandling av personuppgifter enligt GDPR.</p>
-                <button class="btn-action" onclick="sendTermination()">Skicka uppsägning</button>
-            </div>
-        </div>
     </div>
 
     <footer id="kontakt">
