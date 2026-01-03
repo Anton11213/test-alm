@@ -163,6 +163,25 @@
             transform: translateY(-2px);
         }
 
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         /* Sections */
         section {
             padding: 80px 10%;
@@ -314,7 +333,10 @@
         <div class="hero-overlay"></div>
         <h1>Tryggt boende och plats för ditt företag</h1>
         <p>Vi erbjuder hem och lokaler med karaktär i Hässleholm och Tyringe.</p>
-        <a href="bostader.html" class="btn">Se våra fastigheter</a>
+        <div class="btn-group">
+            <a href="bostader.html" class="btn">Sök ledig bostad</a>
+            <a href="hyresgast.html" class="btn btn-outline">Felanmälan</a>
+        </div>
     </header>
 
     <section class="features">
@@ -384,7 +406,8 @@
             </div>
         </div>
         <div style="text-align:center; border-top:1px solid #334155; padding-top:20px; font-size:0.8rem;">
-            <p>© 2025 L Almquist Fastighetsförvaltning</p>
+            <p>© 2025 L Almquist Fastighetsförvaltning | <a href="policy.html"
+                    style="color: #94a3b8; text-decoration: none;">Integritetspolicy (GDPR)</a></p>
         </div>
     </footer>
 

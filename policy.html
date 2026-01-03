@@ -5,36 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Kontakt - L Almquist Fastighetsförvaltning</title>
+    <title>Integritetspolicy & GDPR - L Almquist Fastighetsförvaltning</title>
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
             --primary: #0f172a;
-            --secondary: #334155;
+            --secondary: #475569;
             --bg-light: #f8fafc;
             --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-light);
             color: var(--secondary);
-            margin: 0;
+            line-height: 1.6;
         }
 
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        /* Navigation */
         nav {
             background: var(--white);
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .logo {
@@ -47,7 +69,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            text-decoration: none;
         }
 
         .nav-links {
@@ -56,10 +77,9 @@
         }
 
         .nav-links a {
-            font-size: 0.9rem;
-            font-weight: 500;
             color: var(--secondary);
-            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
@@ -74,69 +94,33 @@
             color: var(--primary);
         }
 
+        /* Page Content */
         .container {
-            max-width: 1000px;
-            margin: 60px auto;
+            max-width: 800px;
+            margin: 80px auto;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
+            text-align: left;
+            min-height: 50vh;
         }
 
-        .contact-info h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        .container h1 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
             color: var(--primary);
+            line-height: 1.2;
         }
 
-        .contact-form {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        .container p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--primary);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .btn-send {
-            width: 100%;
-            padding: 15px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-send:hover {
-            background: #1e293b;
-        }
-
+        /* Footer */
         footer {
             background: var(--primary);
             color: #94a3b8;
             padding: 60px 5%;
-            margin-top: 80px;
         }
 
         .footer-content {
@@ -154,7 +138,7 @@
             font-size: 0.9rem;
         }
 
-        .footer-map-container {
+        .map-container {
             width: 100%;
             height: 250px;
             border-radius: 4px;
@@ -162,17 +146,19 @@
             border: 1px solid #334155;
         }
 
-        .footer-map-container iframe {
+        iframe {
             width: 100%;
             height: 100%;
             border: 0;
         }
 
         @media (max-width: 768px) {
+            .container {
+                margin: 40px auto;
+            }
 
-            .container,
-            .footer-content {
-                grid-template-columns: 1fr;
+            .container h1 {
+                font-size: 2.2rem;
             }
 
             .nav-links {
@@ -207,50 +193,17 @@
             <a href="bostader.html">Bostäder & Lokaler</a>
             <a href="hyresgast.html">För Hyresgäster</a>
             <a href="om-oss.html">Om oss</a>
-            <a href="kontakt.html" style="font-weight:bold; color:var(--primary);">Kontakt</a>
+            <a href="kontakt.html">Kontakt</a>
         </div>
     </nav>
 
     <div class="container">
-        <div class="contact-info">
-            <h1>Kontakta oss</h1>
-            <p>Vi finns här för att svara på dina frågor. Du kan nå oss via formuläret, telefon eller besöka vårt
-                kontor.</p>
-            <div style="margin-top:40px;">
-                <p><strong>Besöksadress:</strong><br>Tingshusgatan 8, Hässleholm</p>
-                <p><strong>Telefon:</strong><br>0451-145 58 (Vardagar 09-12)</p>
-                <p><strong>E-post:</strong><br>info@almquistfastigheter.se</p>
-                <p><strong>Postadress:</strong><br>Box 44, 281 21 Hässleholm</p>
-            </div>
-        </div>
-
-        <div class="contact-form">
-            <div class="form-group">
-                <label>Namn:*</label>
-                <input type="text" id="k_name" class="form-control" placeholder="Ditt fullständiga namn">
-            </div>
-            <div class="form-group">
-                <label>E-post:*</label>
-                <input type="email" id="k_email" class="form-control" placeholder="din.e-post@adress.se">
-            </div>
-            <div class="form-group">
-                <label>Ärende:</label>
-                <select id="k_subject" class="form-control">
-                    <option>Allmän fråga</option>
-                    <option>Fråga om hyresavi</option>
-                    <option>Parkering / Garage</option>
-                    <option>Övrigt</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Meddelande:*</label>
-                <textarea id="k_msg" class="form-control" style="height:150px;"
-                    placeholder="Skriv ditt meddelande här..."></textarea>
-            </div>
-            <p style="font-size:0.75rem; color:#666; margin-bottom:15px;">Genom att skicka meddelandet samtycker du till
-                vår dataskyddspolicy enligt GDPR.</p>
-            <button class="btn-send" onclick="sendContact()">Skicka meddelande</button>
-        </div>
+        <h1>Integritetspolicy & GDPR</h1>
+        <p>Vi värnar om din personliga integritet. De personuppgifter du lämnar till oss via intresseanmälningar,
+            felanmälan eller e-post sparas endast i syfte att kunna administrera din ansökan eller ditt
+            hyresförhållande.</p>
+        <p>Vi delar aldrig dina uppgifter med tredje part i marknadsföringssyfte. Uppgifterna sparas så länge det är
+            nödvändigt för ärendet eller så länge lagkrav föreligger.</p>
     </div>
 
     <footer id="kontakt">
@@ -263,7 +216,8 @@
                 <p><i class="fa-solid fa-envelope"></i> Box 44, 281 21 Hässleholm</p>
             </div>
             <div class="footer-col">
-                <div class="footer-map-container">
+                <h4>Hitta hit (Kontor)</h4>
+                <div class="map-container">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2238.643336780761!2d13.7635299!3d56.1594911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653f607a972173f%3A0x6a15e3c75a40871!2sTingshusgatan%208%2C%20281%2031%20H%C3%A4ssleholm!5e0!3m2!1ssv!2sse!4v1709214000000!5m2!1ssv!2sse"
                         loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -277,16 +231,6 @@
     </footer>
 
     <script>
-        function sendContact() {
-            var n = document.getElementById("k_name").value;
-            var e = document.getElementById("k_email").value;
-            var m = document.getElementById("k_msg").value;
-            var s = document.getElementById("k_subject").value;
-            if (!n || !e || !m) { alert("Vänligen fyll i alla obligatoriska fält (*)."); return; }
-
-            var body = `Namn: ${n}\nE-post: ${e}\nÄrende: ${s}\n\nMeddelande:\n${m}`;
-            window.location.href = `mailto:info@almquistfastigheter.se?subject=Kontakt: ${s}&body=${encodeURIComponent(body)}`;
-        }
         function toggleMenu() {
             var menu = document.getElementById("navLinks");
             menu.classList.toggle("active");
