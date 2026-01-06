@@ -19,6 +19,27 @@
             --gold: #c5a059;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .btn {
+            background: white;
+            color: var(--primary);
+            padding: 15px 35px;
+            font-weight: 600;
+            border-radius: 2px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-light);
@@ -266,17 +287,22 @@
     <div class="header-section">
         <h1>Hitta hem hos L Almquist</h1>
         <p>Utforska våra områden och anmäl ditt intresse direkt här på sidan.</p>
+        <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:30px;">
+            <a href="#fastigheter" class="btn">Våra Fastigheter</a>
+            <a href="#ansokan" class="btn">Sök bostad & lokal</a>
+            <a href="#karta" class="btn">Våra Områden</a>
+        </div>
     </div>
 
     <div class="content-container">
-        <div class="map-section">
+        <div class="map-section" id="karta">
             <div class="map-frame">
                 <iframe src="https://www.google.com/maps/d/u/2/embed?mid=1XjMECHs6G5xvyoWzMN_jJKygHg75GdM&ehbc=2E312F"
                     width="100%"></iframe>
             </div>
         </div>
 
-        <div class="info-card">
+        <div class="info-card" id="ansokan">
             <h3><i class="fa-solid fa-house"></i> Bostäder</h3>
             <p>Vi erbjuder ett brett och varierat utbud av hyresrätter och lokaler i Hässleholm och Tyringe. Från
                 yteffektiva ettor till rymliga familjebostäder och sekelskiftesvåningar med karaktär. Oavsett var i
