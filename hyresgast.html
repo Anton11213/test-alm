@@ -10,7 +10,6 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
         :root {
             --primary: #0f172a;
@@ -42,8 +41,7 @@
             transition: 0.3s;
         }
 
-        /* Navigation (Standardiserad) */
-        /* Navigation (Standardiserad) */
+        /* Navigation */
         nav {
             background: var(--white);
             padding: 15px 5%;
@@ -91,7 +89,7 @@
             color: var(--primary);
         }
 
-        /* Innehåll */
+        /* Content */
         .container {
             max-width: 900px;
             margin: 60px auto;
@@ -131,7 +129,7 @@
             color: #c53030;
         }
 
-        /* Accordion / Skötselråd */
+        /* Accordion */
         .accordion {
             margin-top: 20px;
         }
@@ -179,7 +177,7 @@
             transform: rotate(180deg);
         }
 
-        /* Jour-rutor */
+        /* Jour Grid */
         .jour-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -202,7 +200,7 @@
             margin-top: 15px;
         }
 
-        /* Formulär och Knappar */
+        /* Forms & Buttons */
         .btn-action {
             display: inline-block;
             margin-top: 15px;
@@ -445,8 +443,7 @@
                             få tillstånd att hyra ut den i andra hand. Du behöver alltid ett skriftligt godkännande från
                             oss innan uthyrningen påbörjas.</p>
                         <p>Olovlig andrahandsuthyrning är grund för uppsägning av hyresavtalet.</p>
-                        <p>Tillstånd beviljas restriktivt för max 12 månader i taget. Varje
-                            ansökan prövas enskilt.<br>
+                        <p>Tillstånd beviljas restriktivt för max 12 månader i taget. Varje ansökan prövas enskilt.<br>
                             <a href="kontakt.html" class="btn-action"
                                 style="margin-top: 10px; text-decoration: none; font-size: 0.9rem;">Kontakta oss här för
                                 att ansöka</a>
@@ -511,8 +508,7 @@
                                     <textarea id="u_msg" class="form-control" style="height:100px;"></textarea>
                                 </div>
                                 <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">Genom att skicka
-                                    uppsägningen
-                                    samtycker du till vår behandling av personuppgifter enligt GDPR.</p>
+                                    uppsägningen samtycker du till vår behandling av personuppgifter enligt GDPR.</p>
                                 <button class="btn-action" onclick="sendTermination()">Skicka uppsägning</button>
                             </div>
                         </div>
@@ -525,10 +521,8 @@
             <h3><i class="fa-solid fa-hand-sparkles"></i> Sköt om ditt boende</h3>
             <p style="margin-bottom: 20px;">Här har vi samlat praktiska tips för hur du tar hand om din lägenhet.</p>
             <p style="margin-bottom: 20px;"><strong>Viktigt:</strong> Är du osäker på hur något ska göras, chansa inte.
-                Gör inget du inte känner att
-                du behärskar. Kontakta alltid oss om du är tveksam, så hjälper vi dig att göra rätt. På så sätt undviker
-                vi onödiga skador och kostnader.
-            </p>
+                Gör inget du inte känner att du behärskar. Kontakta alltid oss om du är tveksam, så hjälper vi dig att
+                göra rätt. På så sätt undviker vi onödiga skador och kostnader.</p>
 
             <div class="accordion">
                 <div class="accordion-item">
@@ -689,50 +683,38 @@
         <div class="info-block" id="ordningsregler">
             <h3><i class="fa-solid fa-list-check"></i> Trivselregler – för allas trevnad</h3>
             <p>Här har vi samlat våra trivselregler. För att alla ska trivas och känna sig trygga i sitt boende är det
-                viktigt
-                att vi visar hänsyn och respekterar varandra.</p>
+                viktigt att vi visar hänsyn och respekterar varandra.</p>
             <div class="accordion">
                 <div class="accordion-item">
                     <button class="accordion-header">Läs våra trivselregler</button>
                     <div class="accordion-content">
                         <ul>
                             <li><strong>Ro och hänsyn:</strong> Vi visar hänsyn dygnet runt, men mellan kl. 22.00 och
-                                07.00 ska det
-                                vara lugnt i huset. Tänk på att inte spela hög musik eller borra i väggar under denna
-                                tid. Ska du ha
-                                fest? Förvarna gärna grannarna.</li>
+                                07.00 ska det vara lugnt i huset. Tänk på att inte spela hög musik eller borra i väggar
+                                under denna tid. Ska du ha fest? Förvarna gärna grannarna.</li>
                             <li><strong>Fria trapphus (Brandsäkerhet):</strong> Trapphuset är din utrymningsväg vid
-                                brand och måste
-                                hållas helt fritt. Det är inte tillåtet att förvara barnvagnar, cyklar, dörrmattor eller
-                                soppåsar i
-                                trapphuset. Dessa utgör en brandrisk och hindrar städning samt räddningspersonal.</li>
+                                brand och måste hållas helt fritt. Det är inte tillåtet att förvara barnvagnar, cyklar,
+                                dörrmattor eller soppåsar i trapphuset. Dessa utgör en brandrisk och hindrar städning
+                                samt räddningspersonal.</li>
                             <li><strong>Tvättstugan:</strong> Respektera bokade tider. När du är klar, torka av
-                                maskinerna, sopa
-                                golvet och rensa filter. Lämna tvättstugan i det skick du själv vill finna den.</li>
+                                maskinerna, sopa golvet och rensa filter. Lämna tvättstugan i det skick du själv vill
+                                finna den.</li>
                             <li><strong>Sophantering:</strong> Knyt alltid ihop soppåsen ordentligt innan du slänger
-                                den. Sortera
-                                ditt avfall enligt anvisningarna i miljörummet. Grovsopor får ej lämnas i miljörummet
-                                utan ansvaras
-                                för av hyresgästen.</li>
+                                den. Sortera ditt avfall enligt anvisningarna i miljörummet. Grovsopor får ej lämnas i
+                                miljörummet utan ansvaras för av hyresgästen.</li>
                             <li><strong>Balkong och uteplats:</strong> Det är tillåtet att grilla med elgrill, men på
-                                grund av
-                                brandrisk och os är kol- och gasolgrill inte tillåtet på balkonger. Skaka inte mattor
-                                eller
-                                sängkläder från balkongen, då dammet hamnar hos grannen under.</li>
+                                grund av brandrisk och os är kol- och gasolgrill inte tillåtet på balkonger. Skaka inte
+                                mattor eller sängkläder från balkongen, då dammet hamnar hos grannen under.</li>
                             <li><strong>Rökning:</strong> Rökning är förbjuden i alla allmänna utrymmen såsom trapphus,
-                                tvättstuga
-                                och källare. Visa hänsyn om du röker utomhus så att röken inte drar in till grannar.
-                            </li>
+                                tvättstuga och källare. Visa hänsyn om du röker utomhus så att röken inte drar in till
+                                grannar.</li>
                             <li><strong>Husdjur:</strong> Husdjur är välkomna men ska hållas under uppsikt så att de
-                                inte stör
-                                omgivningen eller förorenar i utemiljön.</li>
+                                inte stör omgivningen eller förorenar i utemiljön.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
 
     <footer id="kontakt">
@@ -740,8 +722,7 @@
             <div class="footer-col">
                 <h4>L Almquist Fastighetsförvaltning</h4>
                 <p><i class="fa-solid fa-map-pin"></i> Tingshusgatan 8, 281 30 Hässleholm<br>(Besök enligt
-                    överenskommelse)
-                </p>
+                    överenskommelse)</p>
                 <p><i class="fa-solid fa-phone"></i> <strong>0451-145 58</strong> | Vardagar 09:00–12:00</p>
                 <p><i class="fa-solid fa-at"></i> info@almquistfastigheter.se</p>
                 <p><i class="fa-solid fa-envelope"></i> Box 44, 281 21 Hässleholm</p>
@@ -809,7 +790,6 @@
             window.location.href = `mailto:info@almquistfastigheter.se?subject=Uppsägning - ${addr}&body=${encodeURIComponent(body)}`;
         }
     </script>
-
 </body>
 
 </html>

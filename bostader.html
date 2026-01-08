@@ -23,23 +23,6 @@
             scroll-behavior: smooth;
         }
 
-        .btn {
-            background: white;
-            color: var(--primary);
-            padding: 15px 35px;
-            font-weight: 600;
-            border-radius: 2px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: #f1f5f9;
-            transform: translateY(-2px);
-        }
-
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-light);
@@ -105,6 +88,7 @@
             color: var(--primary);
         }
 
+        /* Header & Common */
         .header-section {
             background: var(--primary);
             color: white;
@@ -118,6 +102,41 @@
             font-size: 2.5rem;
         }
 
+        .btn {
+            background: white;
+            color: var(--primary);
+            padding: 15px 35px;
+            font-weight: 600;
+            border-radius: 2px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        .btn-action {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-action:hover {
+            background-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Content */
         .content-container {
             max-width: 1000px;
             margin: -40px auto 60px auto;
@@ -158,23 +177,7 @@
             margin-bottom: 30px;
         }
 
-        .btn-action {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background-color: var(--secondary);
-            color: white;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-action:hover {
-            background-color: var(--primary);
-            transform: translateY(-2px);
-        }
-
+        /* Forms */
         .expandable-form {
             display: none;
             margin-top: 30px;
@@ -207,6 +210,7 @@
             flex-wrap: wrap;
         }
 
+        /* Footer */
         footer {
             background: var(--primary);
             color: #94a3b8;
@@ -243,6 +247,7 @@
             border: 0;
         }
 
+        /* Mobile */
         @media (max-width: 768px) {
             .footer-content {
                 grid-template-columns: 1fr;
@@ -295,6 +300,8 @@
     </div>
 
     <div class="content-container">
+
+        <!-- Map Section -->
         <div class="map-section" id="karta">
             <div class="map-frame">
                 <iframe src="https://www.google.com/maps/d/u/2/embed?mid=1XjMECHs6G5xvyoWzMN_jJKygHg75GdM&ehbc=2E312F"
@@ -302,6 +309,7 @@
             </div>
         </div>
 
+        <!-- Bostad Form -->
         <div class="info-card" id="ansokan">
             <h3><i class="fa-solid fa-house"></i> Bostäder</h3>
             <p>Vi erbjuder ett brett och varierat utbud av hyresrätter och lokaler i Hässleholm och Tyringe. Från
@@ -314,12 +322,14 @@
                 <div class="form-group"><label>Namn:*</label><input type="text" id="h_name" class="form-control"></div>
                 <div class="form-group"><label>Personnummer:*</label><input type="text" id="h_pnr" class="form-control">
                 </div>
+
                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
                     <div class="form-group"><label>Telefon:*</label><input type="tel" id="h_phone" class="form-control">
                     </div>
                     <div class="form-group"><label>E-post:*</label><input type="email" id="h_email"
                             class="form-control"></div>
                 </div>
+
                 <div class="form-group">
                     <label>Önskad storlek:</label>
                     <div class="checkbox-group">
@@ -330,16 +340,19 @@
                         <label><input type="checkbox" value="5+ rum"> 5+ rum</label>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label>Önskemål / Meddelande:</label>
                     <textarea id="h_msg" class="form-control" rows="4"></textarea>
                 </div>
+
                 <p class="gdpr-text">Genom att skicka denna ansökan samtycker du till att L Almquist
                     Fastighetsförvaltning behandlar dina personuppgifter enligt GDPR.</p>
                 <button class="btn-action" onclick="sendHousing()">Skicka anmälan</button>
             </div>
         </div>
 
+        <!-- Commercial Form -->
         <div class="info-card">
             <h3><i class="fa-solid fa-briefcase"></i> Kommersiella lokaler</h3>
             <p>Söker ni lokaler för butik, kontor eller annan verksamhet? Gör en förfrågan nedan.</p>
@@ -350,12 +363,14 @@
                         class="form-control"></div>
                 <div class="form-group"><label>Organisationsnummer:</label><input type="text" id="c_org"
                         class="form-control"></div>
+
                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
                     <div class="form-group"><label>Kontaktperson:*</label><input type="text" id="c_contact"
                             class="form-control"></div>
                     <div class="form-group"><label>E-post:*</label><input type="email" id="c_email"
                             class="form-control"></div>
                 </div>
+
                 <div class="form-group"><label>Typ av verksamhet:</label>
                     <select id="c_type" class="form-control">
                         <option value="">Välj typ...</option>
@@ -366,23 +381,29 @@
                         <option value="Annat">Annat</option>
                     </select>
                 </div>
+
                 <div class="form-group"><label>Önskad yta (ca kvm):</label><input type="text" id="c_sqm"
                         class="form-control"></div>
+
                 <div class="form-group">
                     <label>Önskemål / Meddelande:</label>
                     <textarea id="c_msg" class="form-control" rows="4"></textarea>
                 </div>
+
                 <p class="gdpr-text">Genom att skicka denna förfrågan samtycker du till vår behandling av
                     personuppgifter enligt GDPR.</p>
                 <button class="btn-action" onclick="sendComm()">Skicka förfrågan</button>
             </div>
         </div>
 
+        <!-- Real Estate Listings -->
         <div class="info-card" id="fastigheter">
             <h2>Våra Fastigheter</h2>
 
+            <!-- Hässleholm -->
             <h3 style="margin-top:20px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">Hässleholm</h3>
 
+            <!-- Hässleholm Centrum -->
             <h4 style="margin-top:15px; font-size:1.1rem;">Centrum</h4>
             <details style="margin-bottom:10px;">
                 <summary style="cursor:pointer; color:var(--primary); font-weight:500;">Visa adresser</summary>
@@ -470,6 +491,7 @@
                 </div>
             </details>
 
+            <!-- Hässleholm Väster -->
             <h4 style="margin-top:15px; font-size:1.1rem;">Väster</h4>
             <details style="margin-bottom:10px;">
                 <summary style="cursor:pointer; color:var(--primary); font-weight:500;">Visa adresser</summary>
@@ -644,12 +666,13 @@
                 </div>
             </details>
 
+            <!-- Hässleholm Stattena -->
             <h4 style="margin-top:15px; font-size:1.1rem;">Stattena – Sonetorp</h4>
             <details style="margin-bottom:10px;">
                 <summary style="cursor:pointer; color:var(--primary); font-weight:500;">Visa adresser</summary>
                 <div style="padding:10px; background:#f1f5f9; margin-top:5px; border-radius:4px;">
 
-                    <!-- Fastighet 1 (Ny) -->
+                    <!-- Fastighet 1 -->
                     <div style="display: flex; gap: 20px; padding: 15px 0; align-items: flex-start; flex-wrap: wrap;">
                         <img src="image_777e06.jpg" alt="Ljust och luftigt boende"
                             style="width: 200px; height: 150px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
@@ -659,8 +682,7 @@
                                 Majorsgatan 16</h5>
                             <p style="margin-bottom: 10px; font-size: 0.95rem;">Ljust och luftigt boende i ett lugnt och
                                 tryggt område. Här får du nära till både natur och service, utan att tumma på boytan.
-                                Fastigheten ligger vid en park, nära matbutiker.
-                            </p>
+                                Fastigheten ligger vid en park, nära matbutiker.</p>
                             <p style="font-size: 0.9rem; color: var(--secondary);">
                                 <strong>Storlek:</strong> 1-3 rum och kök <br>
                                 <strong>Balkong:</strong> Ja | <strong>Diskmaskin:</strong> Tillval |
@@ -672,6 +694,7 @@
                 </div>
             </details>
 
+            <!-- Tyringe -->
             <h3 style="margin-top:30px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">Tyringe</h3>
             <details style="margin-bottom:10px; margin-top:15px;">
                 <summary style="cursor:pointer; color:var(--primary); font-weight:500;">Visa adresser</summary>
@@ -727,8 +750,7 @@
             <div class="footer-col">
                 <h4>L Almquist Fastighetsförvaltning</h4>
                 <p><i class="fa-solid fa-map-pin"></i> Tingshusgatan 8, 281 30 Hässleholm<br>(Besök enligt
-                    överenskommelse)
-                </p>
+                    överenskommelse)</p>
                 <p><i class="fa-solid fa-phone"></i> <strong>0451-145 58</strong> | Vardagar 09:00–12:00</p>
                 <p><i class="fa-solid fa-at"></i> info@almquistfastigheter.se</p>
                 <p><i class="fa-solid fa-envelope"></i> Box 44, 281 21 Hässleholm</p>
