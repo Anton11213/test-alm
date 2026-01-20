@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="600" height="250">
+  <solidColor id="racingGreen" solid-color="#004225" /> 
+  <g transform="translate(50, 25)">
+    <g>
+      <circle cx="100" cy="100" r="90" fill="#004225" />
+      <text x="100" y="135" 
+            font-family="'Times New Roman', Times, serif" 
+            font-size="100" 
+            font-weight="normal" 
+            fill="#ffffff" 
+            text-anchor="middle"
+            letter-spacing="-2">
+        LA
+      </text>
+    </g>
+    <g transform="translate(220, 75)">
+      <text x="0" y="40" 
+            font-family="'Arial', 'Helvetica Neue', sans-serif" 
+            font-size="52" 
+            font-weight="900" 
+            fill="#004225" 
+            letter-spacing="-1">
+        L ALMQUIST
+      </text>
+      <text x="5" y="80" 
+            font-family="'Arial', 'Helvetica Neue', sans-serif" 
+            font-size="16" 
+            font-weight="bold" 
+            fill="#333333" 
+            letter-spacing="3.5"
+            style="text-transform: uppercase;">
+        FASTIGHETSFÖRVALTNING
+      </text>
+    </g>
+  </g>
+</svg>
