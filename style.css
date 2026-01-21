@@ -190,14 +190,19 @@ header .btn {
 
 /* Hero Content Box (Index) */
 .hero-content {
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 30px;
-    border-radius: 5px;
     max-width: 550px;
     margin-top: 10vh;
     margin-bottom: 10vh;
     margin-left: auto;
     margin-right: auto;
+    /* Removed background/border/shadow from here */
+}
+
+.text-wrapper {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 5px;
+    margin-bottom: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border: 1px solid #004225;
 }
