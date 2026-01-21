@@ -41,3 +41,24 @@ footer strong,
     align-items: center;
     gap: 10px;
 }
+
+/* Header & Logo Fixes */
+nav {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    min-height: auto !important;
+}
+
+.logo-link {
+    width: auto !important;
+    min-width: 400px !important;
+    max-width: none !important;
+    overflow: visible !important;
+    margin-right: 20px !important;
+    padding: 0 !important;
+}
+
+.logo-link img {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
