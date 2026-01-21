@@ -28,7 +28,7 @@
         /* Navigation */
         nav {
             background: #ffffff;
-            padding: 15px 5%;
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -41,8 +41,10 @@
         .logo-link {
             display: flex;
             align-items: center;
-            margin-right: 30px;
-            width: auto;
+            width: auto !important;
+            max-width: none !important;
+            overflow: visible !important;
+            padding-right: 20px;
             text-decoration: none;
         }
 
@@ -200,7 +202,7 @@
 
     <nav>
         <a href="index.html" class="logo-link">
-            <img src="images/logo.svg" alt="L Almquist Fastighetsförvaltning" style="height: 90px; width: auto;">
+            <img src="images/logo.svg" alt="L Almquist Fastighetsförvaltning" style="height: 75px; width: auto;">
         </a>
         <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
         <div class="nav-links" id="navLinks">
