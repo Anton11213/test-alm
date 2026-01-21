@@ -1,6 +1,97 @@
 /* Global Overrides and Shared Styles */
 
-/* Footer Color Fixes */
+:root {
+    --primary: #004225;
+    --white: #ffffff;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4 {
+    color: var(--primary) !important;
+}
+
+/* Header & Footer Titles/Text Exception */
+header h1,
+header h2,
+header h3,
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+.header-section h1 {
+    color: var(--white) !important;
+}
+
+/* Icon Overrides */
+i,
+.fa,
+.fab,
+.fad,
+.fal,
+.far,
+.fas {
+    color: var(--primary);
+}
+
+/* Footer & Dark bg Icons Exception */
+footer i,
+header i,
+.header-section i,
+.btn-action i,
+.btn i {
+    color: inherit !important;
+    /* Let parent text color dictate */
+}
+
+/* Specific Footer Icons Override to ensure white */
+footer i {
+    color: #ffffff !important;
+}
+
+/* Buttons Standard */
+.btn,
+.btn-action {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+    border: 1px solid var(--primary) !important;
+}
+
+.btn:hover,
+.btn-action:hover {
+    background-color: #00331b !important;
+    /* Slightly darker for hover */
+    color: var(--white) !important;
+}
+
+/* Info Boxes (Jour & Kontakt) */
+.jour-box,
+.info-notice {
+    background-color: #f0f7f4 !important;
+    /* Pale green */
+    border: 1px solid var(--primary) !important;
+    color: var(--primary) !important;
+}
+
+.jour-box h4,
+.info-notice p strong {
+    color: var(--primary) !important;
+}
+
+/* Bostader Hero Buttons Exception */
+.header-section .btn {
+    background-color: #ffffff !important;
+    color: var(--primary) !important;
+    border: 1px solid #ffffff !important;
+}
+
+.header-section .btn:hover {
+    background-color: #f1f5f9 !important;
+}
+
+/* Footer Color Fixes (Previous) */
 footer,
 .site-footer {
     color: #ffffff !important;
@@ -10,22 +101,14 @@ footer a,
 .site-footer a {
     color: #ffffff !important;
     text-decoration: none;
-    /* Optional: removes underline */
 }
 
-/* Ensure icons in footer are also white */
-footer i,
-.site-footer i {
-    color: #ffffff !important;
-}
-
-/* Ensure strong tags in footer are white */
 footer strong,
 .site-footer strong {
     color: #ffffff !important;
 }
 
-/* Uppsägning Boxes */
+/* Uppsägning Boxes (Previous) */
 .uppsagning-box {
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
@@ -42,7 +125,7 @@ footer strong,
     gap: 10px;
 }
 
-/* Header & Logo Fixes */
+/* Header & Logo Fixes (Previous) */
 nav {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
