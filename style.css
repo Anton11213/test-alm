@@ -1,21 +1,43 @@
 /* Global Overrides and Shared Styles */
 
 /* Footer Color Fixes */
-footer, .site-footer {
+footer,
+.site-footer {
     color: #ffffff !important;
 }
 
-footer a, .site-footer a {
+footer a,
+.site-footer a {
     color: #ffffff !important;
-    text-decoration: none; /* Optional: removes underline */
+    text-decoration: none;
+    /* Optional: removes underline */
 }
 
 /* Ensure icons in footer are also white */
-footer i, .site-footer i {
+footer i,
+.site-footer i {
     color: #ffffff !important;
 }
 
 /* Ensure strong tags in footer are white */
-footer strong, .site-footer strong {
+footer strong,
+.site-footer strong {
     color: #ffffff !important;
+}
+
+/* Uppsägning Boxes */
+.uppsagning-box {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.uppsagning-box h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
