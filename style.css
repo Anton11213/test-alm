@@ -146,6 +146,8 @@ nav {
 }
 
 .logo-link img {
+    width: auto !important;
+    height: 85px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
