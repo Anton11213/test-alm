@@ -461,61 +461,7 @@
                             fastigheten.</p>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">Uppsägning och utflyttning</button>
-                    <div class="accordion-content">
-                        <p>Uppsägning av hyreskontraktet ska ske skriftligen. Uppsägningstiden är tre hela
-                            kalendermånader, räknat från nästkommande månadsskifte.</p>
-                        <ul>
-                            <li><strong>Visning:</strong> Under uppsägningstiden är du skyldig att hålla lägenheten
-                                tillgänglig för visning för kommande hyresgäster.</li>
-                            <li><strong>Besiktning:</strong> I samband med avflyttning görs en besiktning. Boka tid för
-                                denna hos oss senast två veckor innan du flyttar.</li>
-                            <li><strong>Flyttstädning:</strong> Lägenheten ska vara noggrant städad inklusive biutrymmen
-                                som balkong och förråd vid nyckelåterlämning.</li>
-                        </ul>
 
-                        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
-                            <h4
-                                style="color:var(--primary); font-family:'Playfair Display', serif; margin-bottom:15px; font-size:1.1rem;">
-                                Säg upp ditt kontrakt</h4>
-                            <p style="margin-bottom:15px;">Om du vill säga upp ditt kontrakt digitalt kan du använda
-                                formuläret nedan. Vi rekommenderar att du alltid ringer oss för att bekräfta att
-                                uppsägningen mottagits om du inte får en bekräftelse inom några dagar.</p>
-
-                            <button class="btn-action" onclick="toggleForm('uBoxForm')">Öppna
-                                uppsägningsformulär</button>
-
-                            <div id="uBoxForm" class="expandable-form">
-                                <div class="form-group">
-                                    <label class="form-label">Dagens datum:*</label>
-                                    <input type="date" id="u_date" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Namn:*</label>
-                                    <input type="text" id="u_name" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Nuvarande adress:*</label>
-                                    <input type="text" id="u_address" class="form-control">
-                                </div>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                    <div class="form-group"><label class="form-label">Telefonnummer:*</label><input
-                                            type="tel" id="u_phone" class="form-control"></div>
-                                    <div class="form-group"><label class="form-label">E-post:*</label><input
-                                            type="email" id="u_email" class="form-control"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Meddelande / Ny adress:</label>
-                                    <textarea id="u_msg" class="form-control" style="height:100px;"></textarea>
-                                </div>
-                                <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">Genom att skicka
-                                    uppsägningen samtycker du till vår behandling av personuppgifter enligt GDPR.</p>
-                                <button class="btn-action" onclick="sendTermination()">Skicka uppsägning</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -717,6 +663,92 @@
                 </div>
             </div>
         </div>
+
+        <div class="info-block" id="uppsagning">
+            <h2>Uppsägning av hyresavtal</h2>
+            <p>Uppsägningstiden är normalt tre (3) kalendermånader räknat från nästkommande månadsskifte, såvida inte
+                annat avtalats. Du kan välja att säga upp ditt avtal via post eller digitalt här nedan.</p>
+
+            <div style="margin-top: 40px; margin-bottom: 40px;">
+                <h3>Alternativ 1: Uppsägning via hyreskontrakt</h3>
+                <p>Uppsägning görs enklast genom att du undertecknar den del av ditt nuvarande hyreskontrakt som avser
+                    uppsägning. Detta skickas till:</p>
+                <p
+                    style="margin-top: 15px; margin-bottom: 20px; font-weight: 600; font-size: 1.1rem; line-height: 1.5; color: var(--primary);">
+                    Almquist Fastighetsförvaltning<br>
+                    Box 44<br>
+                    281 21 HÄSSLEHOLM
+                </p>
+                <div class="alert-box" style="background-color: #f0fdf4; border-color: #bbf7d0; color: #166534;">
+                    <p><strong>Viktigt:</strong> Efter mottagen uppsägning skickar vi en skriftlig bekräftelse till dig
+                        via post. Det är viktigt att du är uppmärksam på att du mottar denna bekräftelse. I brevet
+                        medföljer även städinstruktioner och annan viktig information inför din avflyttning.</p>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; padding-top: 40px;">
+                <h3>Alternativ 2: Digital uppsägning</h3>
+
+                <div class="expandable-form" style="display: block; margin-top: 20px; border:none; padding:0;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label class="form-label" for="u_name">Namn:*</label>
+                            <input type="text" id="u_name" class="form-control">
+                        </div>
+                        <div>
+                            <label class="form-label" for="u_pnr">Personnummer:*</label>
+                            <input type="text" id="u_pnr" class="form-control">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label class="form-label" for="u_address">Gatuadress:*</label>
+                            <input type="text" id="u_address" class="form-control">
+                        </div>
+                        <div>
+                            <label class="form-label" for="u_lgh">Lägenhetsnr:*</label>
+                            <input type="text" id="u_lgh" class="form-control">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label class="form-label" for="u_phone">Telefon:*</label>
+                            <input type="tel" id="u_phone" class="form-control">
+                        </div>
+                        <div>
+                            <label class="form-label" for="u_email">E-post:*</label>
+                            <input type="email" id="u_email" class="form-control">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label class="form-label" for="u_date">Önskat avflyttningsdatum:*</label>
+                            <input type="date" id="u_date" class="form-control">
+                        </div>
+                        <div>
+                            <label class="form-label" for="u_new_addr">Ny adress (för sluträkning):*</label>
+                            <input type="text" id="u_new_addr" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 15px; margin-bottom: 25px;">
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                            <input type="checkbox" id="u_confirm"
+                                style="width: 20px; height: 20px; accent-color: var(--primary);">
+                            <span style="font-weight: 500;">Jag intygar att uppgifterna är korrekta och bekräftar härmed
+                                uppsägningen.*</span>
+                        </label>
+                    </div>
+
+                    <button class="btn-action" onclick="sendTermination()"
+                        style="background-color: #004225; width: 100%; font-size: 1.1rem; padding: 15px;">Skicka
+                        uppsägning</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer id="kontakt">
@@ -779,17 +811,31 @@
 
         // Send Termination (Uppsägning)
         function sendTermination() {
-            var date = document.getElementById("u_date").value;
             var name = document.getElementById("u_name").value;
+            var pnr = document.getElementById("u_pnr").value;
             var addr = document.getElementById("u_address").value;
+            var lgh = document.getElementById("u_lgh").value;
             var phone = document.getElementById("u_phone").value;
             var email = document.getElementById("u_email").value;
-            var msg = document.getElementById("u_msg").value;
+            var date = document.getElementById("u_date").value;
+            var newAddr = document.getElementById("u_new_addr").value;
+            var confirm = document.getElementById("u_confirm").checked;
 
-            if (!date || !name || !addr || !phone || !email) { alert("Vänligen fyll i alla obligatoriska fält."); return; }
+            if (!name || !pnr || !addr || !lgh || !phone || !email || !date || !newAddr) {
+                alert("Vänligen fyll i alla fält.");
+                return;
+            }
 
-            var body = `UPPSÄGNINGSDATUM: ${date}\nNAMN: ${name}\nADRESS: ${addr}\nTELEFON: ${phone}\nE-POST: ${email}\n\nMEDDELANDE:\n${msg}`;
-            window.location.href = `mailto:info@almquistfastigheter.se?subject=Uppsägning - ${addr}&body=${encodeURIComponent(body)}`;
+            if (!confirm) {
+                alert("Du måste bekräfta uppsägningen genom att kryssa i rutan.");
+                return;
+            }
+
+            var body = `UPPSÄGNING AV HYRESAVTAL\n\nNAMN: ${name}\nPERSONNUMMER: ${pnr}\n\nNUVARANDE ADRESS: ${addr}\nLÄGENHETSNR: ${lgh}\n\nTELEFON: ${phone}\nE-POST: ${email}\n\nÖNSKAT AVFLYTTNINGSDATUM: ${date}\nNY ADRESS (för sluträkning): ${newAddr}\n\nBEKRÄFTELSE: Jag intygar att uppgifterna är korrekta och bekräftar härmed uppsägningen.`;
+
+            // mailto with method=post and enctype=text/plain behavior emulation
+            // Standard mailto opens default mail client
+            window.location.href = `mailto:info@almquistfastigheter.se?subject=Digital Uppsägning - ${addr} (${name})&body=${encodeURIComponent(body)}`;
         }
     </script>
 </body>
