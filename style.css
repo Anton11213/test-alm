@@ -190,12 +190,12 @@ header .btn {
 
 /* Hero Content Box (Index) */
 .hero-content {
-    max-width: 550px;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    margin-left: auto;
-    margin-right: auto;
-    /* Removed background/border/shadow from here */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .text-wrapper {
@@ -204,7 +204,9 @@ header .btn {
     border-radius: 5px;
     margin-bottom: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: 1px solid #004225;
+    border: none !important;
+    max-width: 850px;
+    margin-top: 15vh;
 }
 
 .hero-content h1,
