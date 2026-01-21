@@ -162,9 +162,7 @@ header {
     text-align: center;
     color: var(--white);
     padding: 20px;
-    background-image:
-        linear-gradient(to bottom, rgba(0, 66, 37, 0.4), rgba(0, 0, 0, 0.6)),
-        url('images/hero-bg.jpg');
+    background-image: url('images/hero-bg.jpg');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
