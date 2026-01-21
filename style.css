@@ -151,3 +151,41 @@ nav {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
+
+/* Hero Section (Index) */
+header {
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 20px;
+    background-image:
+        linear-gradient(to bottom, rgba(0, 66, 37, 0.4), rgba(0, 0, 0, 0.6)),
+        url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+header h1 {
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+    color: var(--white) !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Playfair Display', serif;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #e2e8f0;
+    max-width: 600px;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header .btn {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}

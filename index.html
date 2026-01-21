@@ -92,60 +92,7 @@
             color: var(--primary);
         }
 
-        /* Hero */
-        header {
-            height: 65vh;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6));
-            z-index: 1;
-        }
-
-        header h1,
-        header p,
-        header .btn {
-            position: relative;
-            z-index: 2;
-        }
-
-        header h1 {
-            font-size: 3.2rem;
-            margin-bottom: 15px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: #e2e8f0;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
+        /* Hero styles moved to style.css */
 
         .btn {
             background: var(--white);
@@ -329,8 +276,6 @@
     </nav>
 
     <header>
-        <img src="images/hero_new.png" alt="Vacker sekelskiftesfastighet med klassisk karaktär" class="hero-bg">
-        <div class="hero-overlay"></div>
         <h1>Tryggt boende och plats för ditt företag</h1>
         <p>Vi erbjuder hem och lokaler med karaktär i Hässleholm och Tyringe.</p>
         <div class="btn-group">
