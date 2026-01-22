@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Uthyrningspolicy - L Almquist Fastighetsförvaltning</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #004225;
+            --secondary: #475569;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            padding: 5px 5% !important;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            width: auto !important;
+            max-width: none !important;
+            overflow: visible !important;
+            padding-right: 20px !important;
+            flex-shrink: 0 !important;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #004225;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Page Content */
+        .container {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: left;
+            min-height: 50vh;
+        }
+
+        .container h1 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .container h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
+        }
+
+        .container ul,
+        .container ol {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            color: var(--secondary);
+            font-size: 1.05rem;
+        }
+
+        .container li {
+            margin-bottom: 15px;
+        }
+
+        .container strong {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            padding: 60px 5%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 250px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 40px auto;
+            }
+
+            .container h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo-link">
+            <img src="images/logo.svg" alt="L Almquist Fastighetsförvaltning" style="height: 85px; width: auto;">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+        <div class="nav-links" id="navLinks">
+            <a href="bostader.html">Bostäder & Lokaler</a>
+            <a href="hyresgast.html">För Hyresgäster</a>
+            <a href="om-oss.html">Om oss</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Uthyrningspolicy</h1>
+
+        <p>L Almquist Fastighetsförvaltning strävar efter att erbjuda ett tryggt, trivsamt och långsiktigt boende. Vi
+            förvaltar våra fastigheter med omsorg och väljer hyresgäster utifrån objektiva kriterier för att säkerställa
+            en stabil och lugn boendemiljö.</p>
+
+        <p>Uthyrning sker genom att vi matchar lediga lägenheter mot inkomna intresseanmälningar baserat på den sökandes
+            önskemål och profil.</p>
+
+        <h2>Grundkrav för att hyra bostad</h2>
+        <p>För att bli aktuell som hyresgäst hos oss ska du uppfylla följande grundkrav:</p>
+        <ul>
+            <li><strong>Ålder:</strong> Du ska ha fyllt 18 år.</li>
+            <li><strong>Ekonomi:</strong> Du ska ha en stadigvarande inkomst som står i proportion till hyran. Godkända
+                inkomster är arbete, eget företag, pension, sjukersättning, A-kassa, studiemedel eller bostadstillägg.
+                Vi gör en sedvanlig kreditprövning innan kontraktsskrivning.</li>
+            <li><strong>Betalningshistorik:</strong> Vi accepterar inte betalningsanmärkningar eller skulder hos
+                Kronofogden.</li>
+            <li><strong>Referenser:</strong> Vi kan komma att begära referenser från tidigare hyresvärd. Goda
+                boendereferenser är ett krav.</li>
+            <li><strong>Skötsamhet:</strong> Du ska ha en historik av att vara skötsam och inte ha förekommit i
+                störningsärenden i tidigare boende.</li>
+            <li><strong>Hemförsäkring:</strong> Det är ett krav att du tecknar och vidhåller en giltig hemförsäkring
+                under hela hyrestiden.</li>
+        </ul>
+        <p>I särskilda fall kan vi kräva borgen eller deposition om inkomsten bedöms som osäker trots att övriga krav är
+            uppfyllda.</p>
+
+        <h2>Boendeförhållanden och trångboddhet</h2>
+        <p>För att förhindra trångboddhet och onödigt slitage på lägenheten har vi riktlinjer för hur många personer som
+            får bo i en lägenhet. Antalet boende ska vara rimligt i förhållande till lägenhetens storlek. Vår riktlinje
+            är:</p>
+        <ul>
+            <li><strong>1 rum och kök:</strong> Max 2 personer</li>
+            <li><strong>2 rum och kök:</strong> Max 3 personer</li>
+            <li><strong>3 rum och kök:</strong> Max 4 personer</li>
+            <li><strong>4 rum och kök:</strong> Max 5 personer</li>
+        </ul>
+
+        <h2>Så här går uthyrningen till</h2>
+        <p>Vi publicerar normalt inte lediga lägenheter öppet på hemsidan. Uthyrningsprocessen sker istället genom
+            följande steg:</p>
+        <ol>
+            <li><strong>Intresseanmälan:</strong> Du lämnar en intresseanmälan via formuläret på vår hemsida.</li>
+            <li><strong>Matchning:</strong> När en lägenhet blir ledig går vi igenom vårt register. Vi söker efter
+                kandidater vars önskemål matchar den lediga lägenheten.</li>
+            <li><strong>Erbjudande & Visning:</strong> De kandidater som bäst matchar lägenheten och uppfyller våra
+                grundkrav blir kontaktade för en visning.</li>
+            <li><strong>Kontrakt:</strong> Efter visning och godkänd kreditprövning tecknas hyreskontrakt.</li>
+        </ol>
+        <p>Vi förbehåller oss rätten att fritt välja hyresgäst bland de sökande.</p>
+
+        <h2>Giltighetstid för intresseanmälan</h2>
+        <p>För att säkerställa att vårt register är aktuellt sparar vi din intresseanmälan i 6 månader. Om du efter
+            denna tid fortfarande söker bostad hos oss ber vi dig att förnya din anmälan.</p>
+    </div>
+
+    <footer id="kontakt">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>L Almquist Fastighetsförvaltning</h4>
+                <p><i class="fa-solid fa-map-pin"></i> Tingshusgatan 8, 281 30 Hässleholm<br>(Besök enligt
+                    överenskommelse)</p>
+                <p><i class="fa-solid fa-phone"></i> <strong>0451-145 58</strong> | Vardagar 09:00–12:00</p>
+                <p><i class="fa-solid fa-at"></i> info@almquistfastigheter.se</p>
+                <p><i class="fa-solid fa-envelope"></i> Box 44, 281 21 Hässleholm</p>
+            </div>
+            <div class="footer-col">
+                <h4>Hitta hit (Kontor)</h4>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2238.643336780761!2d13.7635299!3d56.1594911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653f607a972173f%3A0x6a15e3c75a40871!2sTingshusgatan%208%2C%20281%2031%20H%C3%A4ssleholm!5e0!3m2!1ssv!2sse!4v1709214000000!5m2!1ssv!2sse"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center; border-top:1px solid #334155; padding-top:20px; font-size:0.8rem;">
+            <p>© 2026 L Almquist Fastighetsförvaltning | <a href="policy.html"
+                    style="color: #94a3b8; text-decoration: none;">Integritetspolicy (GDPR)</a> | <a
+                    href="uthyrningspolicy.html" style="color: #ffffff; text-decoration: none;">Uthyrningspolicy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
+            menu.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
