@@ -1,5 +1,6 @@
-/* Global Overrides and Shared Styles */
-
+/* =========================================
+   1. Global Overrides & Shared Styles
+   ========================================= */
 :root {
     --primary: #004225;
     --white: #ffffff;
@@ -13,7 +14,21 @@ h4 {
     color: var(--primary) !important;
 }
 
-/* Header & Footer Titles/Text Exception */
+/* Icon Overrides (Global) */
+i,
+.fa,
+.fab,
+.fad,
+.fal,
+.far,
+.fas {
+    color: var(--primary);
+}
+
+/* =========================================
+   2. Header & Navigation (Overrides)
+   ========================================= */
+/* Header & Footer Titles/Text Exception - White Text on Dark Backgrounds */
 header h1,
 header h2,
 header h3,
@@ -25,111 +40,7 @@ footer h4,
     color: var(--white) !important;
 }
 
-/* Icon Overrides */
-i,
-.fa,
-.fab,
-.fad,
-.fal,
-.far,
-.fas {
-    color: var(--primary);
-}
-
-/* Footer & Dark bg Icons Exception */
-footer i,
-header i,
-.header-section i,
-.btn-action i,
-.btn i {
-    color: inherit !important;
-    /* Let parent text color dictate */
-}
-
-/* Specific Footer Icons Override to ensure white */
-footer i {
-    color: #ffffff !important;
-}
-
-/* Buttons Standard */
-.btn,
-.btn-action {
-    background-color: var(--primary) !important;
-    color: var(--white) !important;
-    border: 1px solid var(--primary) !important;
-}
-
-.btn:hover,
-.btn-action:hover {
-    background-color: #00331b !important;
-    /* Slightly darker for hover */
-    color: var(--white) !important;
-}
-
-/* Info Boxes (Jour & Kontakt) */
-.jour-box,
-.info-notice {
-    background-color: #f0f7f4 !important;
-    /* Pale green */
-    border: none !important;
-    border-left: 5px solid var(--primary) !important;
-    color: var(--primary) !important;
-    border-radius: 4px !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-    padding: 20px !important;
-}
-
-.jour-box h4,
-.info-notice p strong {
-    color: var(--primary) !important;
-}
-
-/* Bostader Hero Buttons Exception */
-.header-section .btn {
-    background-color: #ffffff !important;
-    color: var(--primary) !important;
-    border: 1px solid #ffffff !important;
-}
-
-.header-section .btn:hover {
-    background-color: #f1f5f9 !important;
-}
-
-/* Footer Color Fixes (Previous) */
-footer,
-.site-footer {
-    color: #ffffff !important;
-}
-
-footer a,
-.site-footer a {
-    color: #ffffff !important;
-    text-decoration: none;
-}
-
-footer strong,
-.site-footer strong {
-    color: #ffffff !important;
-}
-
-/* Uppsägning Boxes (Previous) */
-.uppsagning-box {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-.uppsagning-box h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Header & Logo Fixes (Previous) */
+/* Navigation Overrides */
 nav {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
@@ -152,7 +63,10 @@ nav {
     margin-bottom: 0 !important;
 }
 
-/* Hero Section (Index) */
+/* =========================================
+   3. Hero Section (Index)
+   ========================================= */
+/* Hero Container (Background & Layout) */
 header {
     height: 65vh;
     display: flex;
@@ -168,12 +82,13 @@ header {
     background-attachment: fixed;
 }
 
+/* Hero Typography (Base) */
 header h1 {
     font-size: 3.2rem;
     margin-bottom: 15px;
-    color: var(--white) !important;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     font-family: 'Playfair Display', serif;
+    /* Color handled by Global Exception, unless overridden below */
 }
 
 header p {
@@ -188,50 +103,44 @@ header .btn {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Hero Content Box (Index) */
+/* Hero Content Box (Layout Fixes) */
 .hero-content {
     display: flex !important;
     flex-direction: column !important;
-    /* Stapla textruta och knappar ovanpå varandra */
+    /* Stack text and buttons */
     justify-content: center !important;
-    /* Centrera vertikalt i bilden */
+    /* Center vertically */
     align-items: center !important;
-    /* Centrera horisontellt */
+    /* Center horizontally */
     height: 100% !important;
-    /* Fyll hela hero-sektionens höjd */
     width: 100% !important;
     padding: 20px !important;
-    /* Lite säkerhetsmarginal mot skärmkanterna */
 }
 
+/* Text Wrapper (Compact & Centered) */
 .text-wrapper {
     background-color: rgba(255, 255, 255, 0.7) !important;
-    /* Halvgenomskinlig vit */
     padding: 20px 30px !important;
-    /* Lagom luft runt texten */
+    /* Compact padding */
     border-radius: 4px !important;
     text-align: center !important;
-    /* Centrera texten inuti rutan */
-
-    /* VIKTIGT FÖR BREDD OCH RADBRYTNING */
     width: auto !important;
-    /* Bli inte bredare än innehållet */
+    /* Adapt to content width */
     max-width: 900px !important;
-    /* Tillåt den vara bred nog så texten INTE bryts i onödan */
+    /* Max text width */
     margin: 0 0 20px 0 !important;
-    /* 20px luft NER till knapparna. Ingen luft uppåt. */
+    /* Compact margin to buttons */
     border: none !important;
-    /* Ingen ram */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Specific Typography inside Text Wrapper (Overrides Header defaults) */
 .text-wrapper h1,
 .text-wrapper p {
     color: #004225 !important;
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    /* Låt texten nyttja rutans bredd */
     text-shadow: none !important;
 }
 
@@ -244,13 +153,109 @@ header .btn {
 .text-wrapper p {
     font-size: 1.2rem;
     margin-bottom: 10px !important;
+    /* Reduced margin */
 }
 
+/* Hero Buttons Group */
 .hero-content .btn-group {
     margin-top: 0 !important;
-    /* Avståndet sköts av text-wrapperns margin-bottom */
     display: flex;
     gap: 15px;
-    /* Mellanrum mellan knapparna */
     justify-content: center;
+}
+
+/* =========================================
+   4. Components
+   ========================================= */
+/* Standard Buttons */
+.btn,
+.btn-action {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+    border: 1px solid var(--primary) !important;
+}
+
+.btn:hover,
+.btn-action:hover {
+    background-color: #00331b !important;
+    color: var(--white) !important;
+}
+
+/* Bostader Hero Variant Buttons */
+.header-section .btn {
+    background-color: #ffffff !important;
+    color: var(--primary) !important;
+    border: 1px solid #ffffff !important;
+}
+
+.header-section .btn:hover {
+    background-color: #f1f5f9 !important;
+}
+
+/* Info Boxes (Jour & Kontakt) */
+.jour-box,
+.info-notice {
+    background-color: #f0f7f4 !important;
+    border: none !important;
+    border-left: 5px solid var(--primary) !important;
+    color: var(--primary) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    padding: 20px !important;
+}
+
+.jour-box h4,
+.info-notice p strong {
+    color: var(--primary) !important;
+}
+
+/* Uppsägning Boxes */
+.uppsagning-box {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.uppsagning-box h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* =========================================
+   5. Footer & Site Footer
+   ========================================= */
+footer,
+.site-footer {
+    color: #ffffff !important;
+}
+
+footer a,
+.site-footer a {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+footer strong,
+.site-footer strong {
+    color: #ffffff !important;
+}
+
+/* Footer Icons Overrides */
+footer i,
+header i,
+.header-section i,
+.btn-action i,
+.btn i {
+    color: inherit !important;
+    /* Use parent text color */
+}
+
+/* Specific Footer Icon Color */
+footer i {
+    color: #ffffff !important;
 }
