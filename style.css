@@ -259,3 +259,14 @@ header i,
 footer i {
     color: #ffffff !important;
 }
+
+/* Footer Borders & Separators Override */
+footer div,
+footer .footer-content,
+footer .footer-col {
+    border-color: #ffffff !important;
+}
+
+footer .separator {
+    color: #ffffff !important;
+}
