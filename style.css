@@ -270,3 +270,10 @@ footer .footer-col {
 footer .separator {
     color: #ffffff !important;
 }
+
+/* Fix for "Visa adresser" toggle font */
+details summary {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 500;
+    cursor: pointer;
+}
