@@ -209,6 +209,19 @@ header .btn {
     color: var(--primary) !important;
 }
 
+.alert-box {
+    background-color: #fff5f5;
+    /* Ljus röd bakgrund */
+    border-left: 5px solid #c53030;
+    /* Mörkröd kant */
+    color: #2c0b0e;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    /* Luft under */
+    border-radius: 4px;
+    font-weight: 500;
+}
+
 /* Uppsägning Boxes */
 .uppsagning-box {
     background-color: #f8f9fa;
