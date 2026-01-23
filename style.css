@@ -290,3 +290,46 @@ details summary {
     font-weight: 500;
     cursor: pointer;
 }
+
+/* =========================================
+   6. Mobile Optimization (< 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Justera den vita textrutan för mobil */
+    .text-wrapper {
+        width: 90% !important;
+        /* Låt rutan ta upp nästan hela bredden */
+        padding: 20px 15px !important;
+        /* Mindre luft inuti rutan */
+        margin-bottom: 20px !important;
+    }
+
+    /* Minska rubriken så den inte blir gigantisk */
+    .text-wrapper h1 {
+        font-size: 2rem !important;
+        /* Något mindre textstorlek */
+        line-height: 1.2 !important;
+    }
+
+    /* Justera brödtexten */
+    .text-wrapper p {
+        font-size: 1rem !important;
+    }
+
+    /* Se till att knapparna får plats */
+    .hero-buttons {
+        flex-direction: column;
+        /* Stapla knapparna på varandra på mobil för bättre klickvänlighet */
+        gap: 15px;
+        width: 90%;
+        /* Knapparna får samma bredd som textrutan */
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        /* Gör knapparna fullbreda så de är lätta att trycka på med tummen */
+        display: block;
+        text-align: center;
+    }
+}
