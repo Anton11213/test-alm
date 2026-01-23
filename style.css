@@ -48,12 +48,14 @@ nav {
 }
 
 .logo-link {
-    width: auto !important;
-    min-width: 400px !important;
+    width: fit-content !important;
+    min-width: unset !important;
     max-width: none !important;
     overflow: visible !important;
     margin-right: 20px !important;
     padding: 0 !important;
+    display: flex !important;
+    align-items: center;
 }
 
 .logo-link img {
