@@ -322,38 +322,91 @@
             </p>
             <button class="btn-action" onclick="toggleForm('hForm')">Gör intresseanmälan</button>
 
-            <div id="hForm" class="expandable-form">
-                <div class="form-group"><label>Namn:*</label><input type="text" id="h_name" class="form-control"></div>
-                <div class="form-group"><label>Personnummer:*</label><input type="text" id="h_pnr" class="form-control">
+            <form id="hForm" class="expandable-form" onsubmit="event.preventDefault(); sendHousing();">
+
+                <div class="mb-3">
+                    <label for="namn" class="form-label">Namn:*</label>
+                    <input type="text" class="form-control" id="namn" name="namn" required>
                 </div>
 
-                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
-                    <div class="form-group"><label>Telefon:*</label><input type="tel" id="h_phone" class="form-control">
+                <div class="mb-3">
+                    <label for="pnr" class="form-label">Personnummer:*</label>
+                    <input type="text" class="form-control" id="pnr" name="pnr" required>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="telefon" class="form-label">Telefon:*</label>
+                        <input type="tel" class="form-control" id="telefon" name="telefon" required>
                     </div>
-                    <div class="form-group"><label>E-post:*</label><input type="email" id="h_email"
-                            class="form-control"></div>
-                </div>
-
-                <div class="form-group">
-                    <label>Önskad storlek:</label>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" value="1 rum"> 1 rum</label>
-                        <label><input type="checkbox" value="2 rum"> 2 rum</label>
-                        <label><input type="checkbox" value="3 rum"> 3 rum</label>
-                        <label><input type="checkbox" value="4 rum"> 4 rum</label>
-                        <label><input type="checkbox" value="5+ rum"> 5+ rum</label>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">E-post:*</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Önskemål / Meddelande:</label>
-                    <textarea id="h_msg" class="form-control" rows="4"></textarea>
+                <div class="mb-3">
+                    <label class="form-label">Önskad ort:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Hässleholm" id="ortHas">
+                        <label class="form-check-label" for="ortHas">Hässleholm</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Tyringe" id="ortTyr">
+                        <label class="form-check-label" for="ortTyr">Tyringe</label>
+                    </div>
                 </div>
 
-                <p class="gdpr-text">Genom att skicka denna ansökan samtycker du till att L Almquist
-                    Fastighetsförvaltning behandlar dina personuppgifter enligt GDPR.</p>
-                <button class="btn-action" onclick="sendHousing()">Skicka anmälan</button>
-            </div>
+                <div class="mb-3">
+                    <label class="form-label">Önskad storlek:</label>
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1 rum" id="rum1">
+                            <label class="form-check-label" for="rum1">1 rum</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="2 rum" id="rum2">
+                            <label class="form-check-label" for="rum2">2 rum</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="3 rum" id="rum3">
+                            <label class="form-check-label" for="rum3">3 rum</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="4 rum" id="rum4">
+                            <label class="form-check-label" for="rum4">4 rum</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="5+ rum" id="rum5">
+                            <label class="form-check-label" for="rum5">5+ rum</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="meddelande" class="form-label">Önskemål / Meddelande:</label>
+                    <small class="d-block text-muted mb-2">
+                        Här kan du specificera dina önskemål, t.ex. maxhyra, önskemål om balkong/hiss eller specifika
+                        områden (t.ex. Väster).
+                    </small>
+                    <textarea class="form-control" id="meddelande" name="meddelande" rows="4"></textarea>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="policyCheck" required>
+                    <label class="form-check-label" for="policyCheck">
+                        Jag intygar att jag uppfyller grundkraven i er <a href="uthyrningspolicy.html"
+                            target="_blank">Uthyrningspolicy</a>.
+                    </label>
+                </div>
+
+                <p class="small text-muted">
+                    Genom att skicka denna ansökan samtycker du till att L Almquist Fastighetsförvaltning behandlar dina
+                    personuppgifter enligt GDPR.
+                </p>
+
+                <button type="submit" class="btn btn-success">Skicka anmälan</button>
+            </form>
         </div>
 
         <!-- Commercial Form -->
@@ -801,10 +854,34 @@
             f.style.display = (f.style.display === "block") ? "none" : "block";
         }
         function sendHousing() {
-            var n = document.getElementById("h_name").value;
-            var p = document.getElementById("h_phone").value;
-            if (!n || !p) { alert("Fyll i namn och telefon."); return; }
-            window.location.href = `mailto:info@almquistfastigheter.se?subject=Bostad-${n}&body=Namn: ${n}\nTelefon: ${p}`;
+            var namn = document.getElementById("namn").value;
+            var pnr = document.getElementById("pnr").value;
+            var telefon = document.getElementById("telefon").value;
+            var email = document.getElementById("email").value;
+            var meddelande = document.getElementById("meddelande").value;
+
+            var orter = [];
+            if (document.getElementById("ortHas").checked) orter.push("Hässleholm");
+            if (document.getElementById("ortTyr").checked) orter.push("Tyringe");
+
+            var storlekar = [];
+            var sizes = ["rum1", "rum2", "rum3", "rum4", "rum5"];
+            for (var i = 0; i < sizes.length; i++) {
+                var el = document.getElementById(sizes[i]);
+                if (el && el.checked) storlekar.push(el.value);
+            }
+
+            var subject = "Intresseanmälan Bostad - " + namn;
+            var body = "Namn: " + namn + "\n" +
+                "Personnummer: " + pnr + "\n" +
+                "Telefon: " + telefon + "\n" +
+                "E-post: " + email + "\n\n" +
+                "Önskad ort: " + orter.join(", ") + "\n" +
+                "Önskad storlek: " + storlekar.join(", ") + "\n\n" +
+                "Meddelande:\n" + meddelande + "\n\n" +
+                "Godkänt policy: Ja";
+
+            window.location.href = "mailto:info@almquistfastigheter.se?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
         }
         function sendComm() {
             var n = document.getElementById("c_co").value;
