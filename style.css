@@ -409,6 +409,10 @@ details summary {
     gap: 1rem;
 }
 
+.gap-4 {
+    gap: 1.5rem;
+}
+
 .d-block {
     display: block;
 }
