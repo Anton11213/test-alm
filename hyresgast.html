@@ -377,13 +377,23 @@
                     <div class="form-group"><label class="form-label">E-post:*</label><input type="email" id="f_email"
                             class="form-control"></div>
                 </div>
-                <div class="form-group">
-                    <label class="form-label">Får vi använda huvudnyckel?*</label>
-                    <select id="f_key" class="form-control">
-                        <option value="">-- Välj ett alternativ --</option>
-                        <option value="JA">Ja, ni får gå in med huvudnyckel</option>
-                        <option value="NEJ">Nej, kontakta mig för tidbokning</option>
-                    </select>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label class="form-label">Får vi använda huvudnyckel?*</label>
+                        <select id="f_key" class="form-control">
+                            <option value="">-- Välj ett alternativ --</option>
+                            <option value="JA">Ja, ni får gå in med huvudnyckel</option>
+                            <option value="NEJ">Nej, kontakta mig för tidbokning</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Finns det husdjur i bostaden?*</label>
+                        <select id="f_pets" class="form-control">
+                            <option value="" disabled selected>-- Välj ett alternativ --</option>
+                            <option value="Nej">Nej</option>
+                            <option value="Ja">Ja (Tidsbokning krävs)</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Beskrivning av felet:*</label>
@@ -391,7 +401,8 @@
                         placeholder="Beskriv felet noggrant..."></textarea>
                 </div>
                 <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">Genom att skicka felanmälan samtycker
-                    du till vår behandling av personuppgifter enligt GDPR.</p>
+                    du till vår behandling av personuppgifter enligt <a href="policy.html" target="_blank"
+                        style="color: #198754; text-decoration: underline;">GDPR</a>.</p>
                 <button class="btn-action" onclick="sendFaultReport()">Skicka felanmälan</button>
             </div>
         </div>
@@ -840,12 +851,13 @@
             var name = document.getElementById("f_name").value;
             var addr = document.getElementById("f_address").value;
             var key = document.getElementById("f_key").value;
+            var pets = document.getElementById("f_pets").value;
             var desc = document.getElementById("f_desc").value;
             var phone = document.getElementById("f_phone").value;
 
-            if (!name || !addr || !key || !desc) { alert("Vänligen fyll i alla obligatoriska fält."); return; }
+            if (!name || !addr || !key || !pets || !desc) { alert("Vänligen fyll i alla obligatoriska fält."); return; }
 
-            var body = `NAMN: ${name}\nADRESS: ${addr}\nTELEFON: ${phone}\n\nHUVUDNYCKEL: ${key}\n\nBESKRIVNING:\n${desc}`;
+            var body = `NAMN: ${name}\nADRESS: ${addr}\nTELEFON: ${phone}\n\nHUVUDNYCKEL: ${key}\nHUSDJUR: ${pets}\n\nBESKRIVNING:\n${desc}`;
             window.location.href = `mailto:info@almquistfastigheter.se?subject=Felanmälan - ${addr}&body=${encodeURIComponent(body)}`;
         }
 
